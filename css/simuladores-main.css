@@ -2047,7 +2047,7 @@ box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.32); */
 }
 
 .box-simulador .simulador .img-fondo {
-    background-image: url("../img/image-index.png");
+    background-image: url("../img/image-index.jpg");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2239,7 +2239,9 @@ Se agrega la clase send-email-btn para dejar como block y float left el botón.
     font-size: 12px !important;
 }
 
-
+.cro-link-1 {
+    height: 6.3em !important;
+}
 
 /* ladda.min.css */
 
@@ -4124,6 +4126,15 @@ label{
 @media (min-width: 930px) and (max-width: 991px) {
     .tag-range {
         right: 16em!important;
+    }
+}
+
+@media (min-width: 1037px) and (max-width: 1137px) {
+    .ask-box {
+        height: 7.5em !important;
+    }
+    .ask {
+        padding-bottom: .5em !important;
     }
 }
 

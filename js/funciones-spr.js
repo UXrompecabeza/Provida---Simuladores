@@ -77,21 +77,21 @@ $('.btn-open-email').click(function(e) {
 
 
 $('.sl-1').on('click touchstart', function() {
-    $('.mov1').removeClass('hide-mov1');
+    $('.mov1').removeClass('hide');
     $('.sl-2').on('click touchstart', function() {
-        $('.mov1').addClass('hide-mov1');
-        $('.mov2').addClass('hide-mov2');
-        $('.mov3').removeClass('hide-mov3');
+        $('.mov1').addClass('hide');
+        $('.mov2').addClass('hide');
+        $('.mov3').removeClass('hide');
     });
 });
 
 
 $('.sl-2').on('click touchstart', function() {
-    $('.mov2').removeClass('hide-mov2');
+    $('.mov2').removeClass('hide');
     $('.sl-1').on('click touchstart', function() {
-        $('.mov1').addClass('hide-mov1');
-        $('.mov2').addClass('hide-mov2');
-        $('.mov3').removeClass('hide-mov3');
+        $('.mov1').addClass('hide');
+        $('.mov2').addClass('hide');
+        $('.mov3').removeClass('hide');
     });
 });
 

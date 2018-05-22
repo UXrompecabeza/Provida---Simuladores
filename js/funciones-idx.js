@@ -39,7 +39,7 @@
         var d=document.forms["form-pension"]["DOB2"].value;
         var e=document.forms["form-pension"]["DOB3"].value;
                     
-        if (a=="" && b=="" && c=="" && d=="" && e=="" && $('input[type="radio"]').is(':checked')==false) {
+        if (a=="" && b=="" && c=="" && d=="" && e=="" && $('input[type="radio"]').is(':checked')==false && $('#renta_bruta_1').val() == '0' && $('#renta_bruta_2').val() == '0') {
             $('.input_rut').addClass("rut-error");
             $('#nom_form').addClass("rut-error");
             $('.date1').addClass("rut-error");
@@ -47,6 +47,7 @@
             $('.date3').addClass("rut-error");
             $(".sex1").addClass("rut-error");
             $(".sex2").addClass("rut-error");
+            $(".validacion-d").removeClass("hide");
             $('.env1').attr("disabled");
             return false;
 
@@ -73,6 +74,10 @@
             $('.sex1').addClass("rut-error");
             $('.sex2').addClass("rut-error");
             return false;
+        }else if ($('#renta_bruta_1').val() == '0') {
+            return false;
+        }else if ($('#renta_bruta_2').val() == '0') {
+            return false;
         }else {
             $("#nom_form").removeClass("rut-error");
             $(".input_rut").removeClass("rut-error");
@@ -83,6 +88,7 @@
                 $('.sex1').removeClass("rut-error");
             $('.sex2').removeClass("rut-error");
             $('.date3').removeClass("rut-error");
+            $(".validacion-d").addClass("hide");
             $('.env1').removeAttr("disabled");
         }
     }
