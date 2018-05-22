@@ -1048,7 +1048,7 @@ button.close {
     margin: 0 auto;
     padding: 14px 20px;
     border-radius: 2px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .bg-rango {
@@ -2214,7 +2214,14 @@ Se agrega el block y float left
     color: #0061a0 !important;
     border: 1px solid #0061a0;
 }
+.accordion__title span {
+    width: 88% !important;
+}
 
+
+.product-module__small--product__wrapper {
+    padding: 24px 13px !important;
+}
 
 
 /**
@@ -4920,13 +4927,46 @@ background-color: peru;
     margin-left: -91px;
     padding: 4px;
     width: 17em;
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba(255,255,255,1);
     color: #333;
     content: attr(data-tooltip);
     text-align: left;
     font-size: 12px;
     line-height: 1.2;
     border: 1px solid #333;
+  }
+
+    /* Position tooltip above the element */
+    .tooltip-left[data-tooltip]:before {
+        position: absolute;
+        padding: 4px;
+        width: 17em;
+        background-color:  rgba(255,255,255,1);
+        color: #333;
+        content: attr(data-tooltip);
+        text-align: left;
+        font-size: 12px;
+        line-height: 1.2;
+        border: 1px solid #333;
+        left: 9.7em;
+        bottom: -3em;   
+    }
+
+      /* Triangle hack to make tooltip look like a speech bubble */
+    .tooltip-left[data-tooltip]:after {
+    position: absolute;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid #000;
+    border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content: " ";
+    font-size: 0;
+    line-height: 0;
+    transform: rotate(90deg);
+    left: 24px;
+    top: 8px;
   }
   
   /* Triangle hack to make tooltip look like a speech bubble */
