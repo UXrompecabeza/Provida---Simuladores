@@ -9,8 +9,9 @@ function validateAccordion() {
     var v8 = validate8();
     var v9 = validate9();
     var v10 = validate10();
+    var v11 = validate2b();
     
-    if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10) {
+    if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10 && v11) {
         return true
     } else {
         return false;
@@ -19,8 +20,9 @@ function validateAccordion() {
 
 function validate1() {
     var a = document.forms["form-accordion"]["e-input-cantPension"].value;
+    var b = document.forms["form-accordion"]["edadform"].value;
 
-    if (a =="" ) {
+    if (a == "" ) {
         $('.e-input-cantPension').addClass("rut-error");
         $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
         $('.e-btn-acordion').attr("disabled");
@@ -33,6 +35,19 @@ function validate2() {
     var b = document.forms["form-accordion"]["edadform"].value;
 
     if (b =="") {
+        $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
+        $('.edadform').addClass("rut-error");
+        $('.e-btn-acordion').attr("disabled");
+        return false;
+    } else {
+        return true;
+    }
+};
+
+function validate2b() {
+    var b = document.forms["form-accordion"]["edadform"].value;
+
+    if (b < 43) {
         $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
         $('.edadform').addClass("rut-error");
         $('.e-btn-acordion').attr("disabled");

@@ -39,37 +39,27 @@ function soloLetras(e) {
 
 // <!-- DELIMITACION FECHA -->
 
+function limitMe(e) {
+    if (e.keyCode == 8) { return true; }
+    return this.value.length < $(this).attr("maxLength");
+}
+
 $('input#edadform').attr('maxLength', '3').keypress(limitMe);
 
 $('input#date2').attr('maxLength', '2').keypress(limitMe);
 
-function limitMe(e) {
-    if (e.keyCode == 8) { return true; }
-    return this.value.length < $(this).attr("maxLength");
-}
-
 $('input#date4').attr('maxLength', '4').keypress(limitMe);
-
-function limitMe(e) {
-    if (e.keyCode == 8) { return true; }
-    return this.value.length < $(this).attr("maxLength");
-}
 
 $('input#rut-limit').attr('maxLength', '9').keypress(limitMe);
 
-function limitMe(e) {
-    if (e.keyCode == 8) { return true; }
-    return this.value.length < $(this).attr("maxLength");
-}
-
-// <!-- DELIMITACION NOMBRE -->
-
 $('input#nom_form').attr('maxLength', '30').keypress(limitMe);
 
-function limitMe(e) {
-    if (e.keyCode == 8) { return true; }
-    return this.value.length < $(this).attr("maxLength");
-}
+$('.money').attr('maxLength', '15').keypress(limitMe);
+
+$('#spTotal').attr('maxLength', '15').keypress(limitMe);
+
+
+
 
 // <!-- SOLO NUMEROS EN INPUTS -->
 

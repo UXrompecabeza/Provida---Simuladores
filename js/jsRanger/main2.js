@@ -371,7 +371,7 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 			    min: 0,
 			    max: 1000000000                ,
 			    slide: function (event, ui) {
-			        $("#renta_bruta").val(self.transformToNumberFc(ui.value));
+			        $("#renta_bruta_2").val(self.transformToNumberFc(ui.value));
 			    }
 			});
 

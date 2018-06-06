@@ -376,27 +376,15 @@ span.ui-slider-handle.ui-state-default::before {
     position: absolute;
 }
 
-
-
 /* no need to float anymore, become absolutely positoned */
 
 #portamento_container #sidebar.fixed {
     position: fixed;
-    max-width: 100%;
 }
-
-
-
 /* if the panel is sliding, it needs position:fixed */
 
 #portamento_container #sidebar.fixed .box-rango {
     width: 26.7%;
-}
-
-#portamento_container #sidebar.fixed .padding-result {
-}
-
-#portamento_container #sidebar.fixed .padding-result-perso {
 }
 
 .padd-0 {
@@ -2215,7 +2203,7 @@ Se agrega el block y float left
     border: 1px solid #0061a0;
 }
 .accordion__title span {
-    width: 88% !important;
+    width: 91% !important;
 }
 
 
@@ -4109,19 +4097,17 @@ label{
     }
     
     #portamento_container #sidebar.fixed {
-        position: relative!important;
-        width: 100%!important;
-        right: 0!important;
-        left: 0!important;
-    }
+        position: relative !important;
+        top: inherit !important;
+    } 
 
     #portamento_container #sidebar.fixed .box-rango {
         width: 100%!important;
     }
 
-    #portamento_container #sidebar {
+    /* #portamento_container #sidebar {
         position: initial!important;
-    }
+    } */
 
     .bg-skyblue,    
     .btns-result-general {

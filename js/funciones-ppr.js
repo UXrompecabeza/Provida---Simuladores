@@ -92,6 +92,7 @@
     } else {
         $('#sidebar').portamento({ wrapper: $('#wrapper') }); // set #wrapper as the bottom boundary
     }
+    
 
     // <!--   VALIDADOR RUT -->
     
