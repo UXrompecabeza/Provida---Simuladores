@@ -10,8 +10,10 @@ function validateAccordion() {
     var v9 = validate9();
     var v10 = validate10();
     var v11 = validate2b();
+    var v12 = validate6b();
+    var v13 = validate8b();
     
-    if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10 && v11) {
+    if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10 && v11 && v12 && v13) {
         return true
     } else {
         return false;
@@ -47,7 +49,7 @@ function validate2() {
 function validate2b() {
     var b = document.forms["form-accordion"]["edadform"].value;
 
-    if (b < 43) {
+    if (b < 45) {
         $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
         $('.edadform').addClass("rut-error");
         $('.e-btn-acordion').attr("disabled");
@@ -108,6 +110,20 @@ function validate6() {
         return true;
     }
 };
+
+function validate6b() {
+    var g = $('.e-parent').val()!='default';
+    var h1 = document.forms["form-accordion"]["birthDateMonth"].value;
+
+    if (g && h1 > 13) {
+        $('.birthDateMonth').addClass("rut-error");
+        $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.e-btn-acordion').attr("disabled");
+        return false;
+    } else {
+        return true;
+    }
+};
 function validate7() {
     var g = $('.e-parent').val()!='default';
     var h2 = document.forms["form-accordion"]["birthDateDay"].value;
@@ -126,6 +142,19 @@ function validate8() {
     var h3 = document.forms["form-accordion"]["birthDateYear"].value;
 
     if (g && h3 =="" ) {
+        $('.birthDateYear').addClass("rut-error");
+        $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.e-btn-acordion').attr("disabled");
+        return false;
+    } else {
+        return true;
+    }
+};
+function validate8b() {
+    var g = $('.e-parent').val()!='default';
+    var h3 = document.forms["form-accordion"]["birthDateYear"].value;
+
+    if (g && h3 > 2019 ) {
         $('.birthDateYear').addClass("rut-error");
         $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
         $('.e-btn-acordion').attr("disabled");
@@ -161,7 +190,7 @@ function validate10() {
     }
 };
 
-$("input").keypress(function() {
+$('input').on('keyup keydown keypress change paste', function () {
     if ($(this).val() > 0) {
         $(this).removeClass('rut-error');
     } 

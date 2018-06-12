@@ -1,34 +1,26 @@
+    function limitMe(e) {
+        if (e.keyCode == 8) { return true; }
+        return this.value.length < $(this).attr("maxLength");
+    }
     $('input#date2').attr('maxLength', '2').keypress(limitMe);
-
-    function limitMe(e) {
-        if (e.keyCode == 8) { return true; }
-        return this.value.length < $(this).attr("maxLength");
-    }
-
+    $('input#date3').attr('maxLength', '2').keypress(limitMe);
     $('input#date4').attr('maxLength', '4').keypress(limitMe);
-
-    function limitMe(e) {
-        if (e.keyCode == 8) { return true; }
-        return this.value.length < $(this).attr("maxLength");
-    }
-
-    $('input#rut-limit').attr('maxLength', '9').keypress(limitMe);
-
-    function limitMe(e) {
-        if (e.keyCode == 8) { return true; }
-        return this.value.length < $(this).attr("maxLength");
-    }
-    
+    $('input#rut-limit').attr('maxLength', '9').keypress(limitMe);  
     $('input#nom_form').attr('maxLength', '30').keypress(limitMe);
+    $('input#nom_form').attr('maxLength', '30').keypress(limitMe);
+    // $('input.input_rut').attr('maxLength', '9').keypress(limitMe);
 
-    function limitMe(e) {
-        if (e.keyCode == 8) { return true; }
-        return this.value.length < $(this).attr("maxLength");
-    }
 
     $("#nom_form").keypress(function() {
         if ($("#nom_form") != '') {
             $("#nom_form").removeClass("rut-error");
+        }
+    });
+
+    $('input.input_rut').on('keyup keydown keypress change paste', function () {
+        var maxChars = 9;
+        if ($(this).val().length > maxChars) {
+            $(this).val($(this).val().substr(0, maxChars));
         }
     });
     
@@ -66,8 +58,14 @@
         }else if (d=="") {
             $('.date2').addClass("rut-error");
             return false;
+        }else if (d > 13) {
+            $('.date2').addClass("rut-error");
+            return false;
 
         }else if (e=="") {
+            $('.date3').addClass("rut-error");
+            return false;
+        }else if (e > 2019) {
             $('.date3').addClass("rut-error");
             return false;
         }else if ($('.choice').is(':checked')==false) {
@@ -75,8 +73,16 @@
             $('.sex2').addClass("rut-error");
             return false;
         }else if ($('#renta_bruta_1').val() == '0') {
+            $(".validacion-d").removeClass("hide");
             return false;
         }else if ($('#renta_bruta_2').val() == '0') {
+            $(".validacion-d").removeClass("hide");
+            return false;
+        }else if ($('#renta_bruta_1').val() == '') {
+            $(".validacion-d").removeClass("hide");
+            return false;
+        }else if ($('#renta_bruta_2').val() == '') {
+            $(".validacion-d").removeClass("hide");
             return false;
         }else {
             $("#nom_form").removeClass("rut-error");

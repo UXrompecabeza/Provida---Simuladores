@@ -367,7 +367,7 @@
         <div class="ask-tab">
             <div class="row">
                 <div class="row-general">
-                    <form method="post" id="form-pension" name="form-pension" onsubmit="return validateForm()" action="simple-publico-result.html#pensionate">
+                    <form method="post" id="form-pension" name="form-pension" onsubmit="return validateForm()" action="simple-publico-result.html#ancla">
                         <div class="col-md-3 mar-top-mob-24">
                             <div class="bg-skyblue ask-box">
                                 <div class="container text-center txtarial ask">
@@ -394,11 +394,11 @@
                                     ¿En qué fecha naciste?
                                 </div>
                                 <div class="BirthDate input-group triple-input" id="BirthDate">
-                                    <input id="date2" name="DOB1" type="text" size="2" maxlength="2" placeholder="DD" data-required="true" aria-required="true" id="DOB1" style="font-size:13px" class="col-md-3 col-sm-3 col-xs-3 date1 bor-ask-tab birthDateMonth required" onkeypress="return validaNUM(event)" tabindex="3">
+                                    <input id="date2" name="DOB1" type="number" size="2" maxlength="2" placeholder="DD" data-required="true" aria-required="true" id="DOB1" style="font-size:13px" class="col-md-3 col-sm-3 col-xs-3 date1 bor-ask-tab birthDateMonth required" onkeypress="return validaNUM(event)" tabindex="3">
                                     <label class="col-md-1 col-sm-1 col-xs-1 sectionBar">-</label>
-                                    <input id="date3" name="DOB2" type="text" size="2" maxlength="2" placeholder="MM" min="1" max="12" data-required="true" aria-required="true" id="DOB2" class="col-md-3 col-sm-3 col-xs-3 bor-ask-tab date2 birthDateDay required" tabindex="4" onkeypress="return validaNUM(event)">
+                                    <input id="date3" name="DOB2" type="number" size="2" maxlength="2" placeholder="MM" data-required="true" aria-required="true" id="DOB2" class="col-md-3 col-sm-3 col-xs-3 bor-ask-tab date2 birthDateDay required" tabindex="4" onkeypress="return validaNUM(event)">
                                     <label class="col-md-1 col-sm-1 col-xs-1 sectionBar">-</label>
-                                    <input id="date4" name="DOB3" type="text" size="4" maxlength="4" placeholder="AAAA" min="1800" max="2017" data-required="true" aria-required="true" id="DOB3" class="col-md-4 col-sm-4 col-xs-4 bor-ask-tab date3 birthDateYear required indx_3" tabindex="5" onkeypress="return validaNUM(event)">
+                                    <input id="date4" name="DOB3" type="number" size="4" maxlength="4" placeholder="AAAA" data-required="true" aria-required="true" id="DOB3" class="col-md-4 col-sm-4 col-xs-4 bor-ask-tab date3 birthDateYear required indx_3" tabindex="5" onkeypress="return validaNUM(event)">
                                 </div>
                             </div>
                         </div>
@@ -443,7 +443,7 @@
                                                 <div class="range range-primary mar-top-32">
                                                     <div class="row slider-container">
                                                         <div class="relative-position not-i-container">
-                                                            <span class="currencyinput">$<input id="renta_bruta_1" runat="server" class="marg-bottom-20 calculated-input range-field-1" type="text" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ " /></span>
+                                                            <span class="currencyinput">$<input id="renta_bruta_1" runat="server" class="marg-bottom-20 calculated-input range-field-1" type="text" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ " placeholder="0"/></span>
                                                         </div>
                                                         <div id="slider-1" class="range-slider-1"></div>
                                                     </div>
@@ -457,7 +457,8 @@
                                                 <div class="range range-primary mar-top-32">
                                                     <div class="row slider-container">
                                                         <div class="relative-position not-i-container">
-                                                            <span class="currencyinput">$<input id="renta_bruta_2" runat="server" class="marg-bottom-20 calculated-input range-field-2" type="text" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ " /></span>
+                                                            <span class="currencyinput">$<input id="renta_bruta_2" runat="server" class="marg-bottom-20 calculated-input range-field-2" type="text" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ "
+                                                            placeholder="0" /></span>
                                                         </div>
                                                         <div id="slider-2" class="range-slider-2"></div>
                                                     </div>

@@ -92,6 +92,31 @@
     } else {
         $('#sidebar').portamento({ wrapper: $('#wrapper') }); // set #wrapper as the bottom boundary
     }
+
+    function checkWidth() {
+        var windowSize = $(window).width();
+
+        if (windowSize <= 767) {
+            $('.ancla-tablet').removeAttr('id');
+            $('.ancla-desk').removeAttr('id');
+            $('.ancla-movil').attr('id', 'ancla');
+        }
+        else if (windowSize >= 768 && windowSize <= 992) {
+            $('.ancla-tablet').attr('id', 'ancla');
+            $('.ancla-desk').removeAttr('id');
+            $('.ancla-movil').removeAttr('id');
+        }
+        else if (windowSize >= 993) {
+            $('.ancla-desk').attr('id', 'ancla');
+            $('ancla-tablet').removeAttr('id');
+            $('.ancla-movil').removeAttr('id');
+        }
+    }
+
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);
     
 
     // <!--   VALIDADOR RUT -->

@@ -58,6 +58,12 @@ $('.money').attr('maxLength', '15').keypress(limitMe);
 
 $('#spTotal').attr('maxLength', '15').keypress(limitMe);
 
+$('input.birthDateDay').attr('maxLength', '2').keypress(limitMe);
+
+$('input.birthDateMonth').attr('maxLength', '2').keypress(limitMe);
+
+$('input.birthDateYear').attr('maxLength', '4').keypress(limitMe);
+
 
 
 

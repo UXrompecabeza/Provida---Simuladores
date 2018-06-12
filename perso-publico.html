@@ -395,7 +395,7 @@
                                 <div class="faq base parbase section xk-component xk-section-base" data-xk-section="v1">
                                     <div class="container">
                                         <div class="accordion" data-faq="most_common">
-                                            <form method="post" id="form-accordion" name="form-accordion" onsubmit="return validateAccordion()" action="perso-publico-result.html#result-pp">
+                                            <form method="post" id="form-accordion" name="form-accordion" onsubmit="return validateAccordion()" action="perso-publico-result.html#ancla">
                                             <div>
                                                 <div class="accordion__toggle-all brand-1st pull-right hidden-xs">
                                                     <span class="expandAll">Expandir Todo</span>
@@ -413,13 +413,12 @@
                                                     <div class="bg-skyblue-acordeon row">
                                                         <div class="col-md-7">
                                                             <div class="container">
-                                                                <p>¿Cuánto te gustaría recibir como pensión?
-                                                                    <button data-tooltip="Monto de dinero que recibirías mensualmente." disabled><img src="img/tooltip-blue.svg"></button>
+                                                                <p>¿Cuánto te gustaría recibir como pensión? <button data-tooltip="Monto de dinero que recibirías mensualmente." disabled><img src="img/tooltip-blue.svg"></button>
                                                                 </p>
                                                             </div>
                                                             <div class="container">
                                                                     <span class="peso">$</span>
-                                                                    <input name="e-input-cantPension" class="bor-bott money e-input-cantPension" type="text"  min="30000" max="1000000000" onkeyup="format(this)" maxlength="10" step="1" onkeypress="return validaNUM(event)" style="width: 60%" placeholder="0" />
+                                                                    <input name="e-input-cantPension" class="bor-bott money e-input-cantPension" type="tel" onkeyup="format(this)" step="1" onkeypress="return validaNUM(event)" style="width: 60%" placeholder="0" />
                                                                     <p>mensual</p>
                                                             </div>
                                                         </div>
@@ -469,39 +468,19 @@
                                                                     </div>
                                                                     <div class="container">
                                                                         <span class="peso">$</span>
-                                                                        <input id="input-cifra" type="text" class="cifra bor-bott money e-monto1" name="e-monto1" onchange="sumar();" onkeypress="return validaNUM(event)" onkeyup="format(this)" min="0" max="10000000000" maxlength="11" style="width: 80%" placeholder="0" />
+                                                                        <input id="input-cifra" type="tel" class="cifra bor-bott money e-monto1" name="e-monto1" onchange="sumar();" onkeyup="format(this)" style="width: 80%" placeholder="0" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6 fondos">
                                                                     <div class="container mar-top-mob-24">
-    <p>¿En qué Fondo/s?</p>
-</div>
-<div class="container">
-    <ul id="botoneraFondos">
-        <li><input type="radio" id="fondo-A" class="i-fondo1" name="selector1a" checked="checked"><label for="fondo-A"></label><div class="check">A</div></li>
-        <li><input type="radio" id="fondo-B" class="i-fondo1" name="selector1a">
-            <label for="fondo-B"></label><div class="check">B</div></li>
-        <li><input type="radio" id="fondo-C" class="i-fondo1" name="selector1a">
-            <label for="fondo-C"></label><div class="check">C</div></li>
-        <li><input type="radio" id="fondo-D" class="i-fondo1" name="selector1a">
-            <label for="fondo-D"></label><div class="check">D</div></li>
-        <li><input type="radio" id="fondo-E" class="i-fondo1" name="selector1a">
-            <label for="fondo-E"></label><div class="check">E</div></li>
-    </ul><input class="bor-bott in-perc-fondos" onkeypress="return validaNUM(event)" onkeyup="format(this)" onchange="format(this)" type="text" step="1" min="0" max="100" maxlength="3" placeholder="0" /><span class="peso">%</span></div>
-<div class="container">
-    <ul id="botoneraFondos">
-        <li><input type="radio" id="fondo-A-filaDos" class="i-fondo1" name="selector1b" checked="checked"><label for="fondo-A-filaDos"></label><div class="check">A</div></li>
-        <li><input type="radio" id="fondo-B-filaDos" class="i-fondo1" name="selector1b">
-            <label for="fondo-B-filaDos"></label><div class="check">B</div></li>
-        <li><input type="radio" id="fondo-C-filaDos" class="i-fondo1" name="selector1b">
-            <label for="fondo-C-filaDos"></label><div class="check">C</div></li>
-        <li><input type="radio" id="fondo-D-filaDos" class="i-fondo1" name="selector1b">
-            <label for="fondo-D-filaDos"></label><div class="check">D</div></li>
-        <li><input type="radio" id="fondo-E-filaDos" class="i-fondo1" name="selector1b">
-            <label for="fondo-E-filaDos"></label><div class="check">E</div></li>
-    </ul><input class="bor-bott in-perc-fondos" onkeypress="return validaNUM(event)" onkeyup="format(this)" onchange="format(this)" type="text" step="1" min="0" max="100" maxlength="3" placeholder="0" /><span class="peso">%</span>
-</div>
-                                                                </div>
+                                                                        <p>¿En qué Fondo/s?</p>
+                                                                    </div>
+                                                                    <div class="container">
+                                                                        <ul id="botoneraFondos"><li><input type="radio" id="fondo-A" class="i-fondo1" name="selector1a" checked="checked"><label for="fondo-A"></label><div class="check">A</div></li><li><input type="radio" id="fondo-B" class="i-fondo1" name="selector1a"><label for="fondo-B"></label><div class="check">B</div></li><li><input type="radio" id="fondo-C" class="i-fondo1" name="selector1a"><label for="fondo-C"></label><div class="check">C</div></li><li><input type="radio" id="fondo-D" class="i-fondo1" name="selector1a"><label for="fondo-D"></label><div class="check">D</div></li><li><input type="radio" id="fondo-E" class="i-fondo1" name="selector1a"><label for="fondo-E"></label><div class="check">E</div></li></ul><input class="bor-bott in-perc-fondos" onkeypress="return validaNUM(event)" onkeyup="format(this)" onchange="format(this)" type="text" step="1" min="0" max="100" maxlength="3" placeholder="0" /><span class="peso">%</span></div>
+                                                                    <div class="container">
+                                                                        <ul id="botoneraFondos"><li><input type="radio" id="fondo-A-filaDos" class="i-fondo1" name="selector1b" checked="checked"><label for="fondo-A-filaDos"></label><div class="check">A</div></li><li><input type="radio" id="fondo-B-filaDos" class="i-fondo1" name="selector1b"><label for="fondo-B-filaDos"></label><div class="check">B</div></li><li><input type="radio" id="fondo-C-filaDos" class="i-fondo1" name="selector1b"><label for="fondo-C-filaDos"></label><div class="check">C</div></li><li><input type="radio" id="fondo-D-filaDos" class="i-fondo1" name="selector1b"><label for="fondo-D-filaDos"></label><div class="check">D</div></li><li><input type="radio" id="fondo-E-filaDos" class="i-fondo1" name="selector1b"><label for="fondo-E-filaDos"></label><div class="check">E</div></li></ul><input class="bor-bott in-perc-fondos" onkeypress="return validaNUM(event)" onkeyup="format(this)" onchange="format(this)" type="text" step="1" min="0" max="100" maxlength="3" placeholder="0" /><span class="peso">%</span>
+                                                                    </div>
+                                                                                                                                    </div>
                                                             </div>
                                                             <div class="btdel">
                                                                 <img src="img/icon-close.svg" alt="">
@@ -530,7 +509,7 @@
                                                         <img class="icon icon-minus accordion__title__icon accordion__title__icon--hide pull-right" src="img/icon_less.svg" alt="ver m&aacute;" />
                                                     </div>
                                                     <div class="accordion__content">
-                                                        <!-- <ol id="dinamico" class="d2Dest"> -->
+                                                        <ol id="dinamico" class="d2Dest">
                                                             <li class="d2 botonOculto bg-skyblue-acordeon">
                                                                 <div class="row">
                                                                     <div class="col-md-3">
@@ -549,37 +528,17 @@
                                                                         <p>Monto</p>
                                                                         <div class="clearfix"></div>
                                                                         <span class="peso">$</span>
-                                                                        <input class="bor-bott money e-monto2" onkeyup="format(this)" name="e-monto2" type="text" min="0" max="12000000000" onkeypress="return validaNUM(event)" style="width: 80%" maxlength="11" placeholder="0" />
+                                                                        <input class="bor-bott money e-monto2" onkeyup="format(this)" name="e-monto2" type="tel" style="width: 80%" maxlength="11" placeholder="0" />
                                                                     </div>
 <div class="col-md-6">
 <p>¿En qué Fondo/s?</p>
 <div class="clearfix"></div>
 <div class="container">
-<ul id="botoneraFondos" class="">
-    <li><input type="radio" id="fondo-A2a" class="i-fondo2" name="selector2a" checked="checked">
-        <label for="fondo-A2a"></label><div class="check">A</div></li>
-    <li><input type="radio" id="fondo-B2a" class="i-fondo2" name="selector2a">
-        <label for="fondo-B2a"></label><div class="check">B</div></li>
-    <li><input type="radio" id="fondo-C2a" class="i-fondo2" name="selector2a">
-        <label for="fondo-C2a"></label><div class="check">C</div></li>
-    <li><input type="radio" id="fondo-D2a" class="i-fondo2" name="selector2a">
-        <label for="fondo-D2a"></label><div class="check">D</div></li>
-    <li><input type="radio" id="fondo-E2a" class="i-fondo2" name="selector2a">
-        <label for="fondo-E2a"></label><div class="check">E</div></li>
+<ul id="botoneraFondos" class=""><li><input type="radio" id="fondo-A2a" class="i-fondo2" name="selector2a" checked="checked"><label for="fondo-A2a"></label><div class="check">A</div></li><li><input type="radio" id="fondo-B2a" class="i-fondo2" name="selector2a"><label for="fondo-B2a"></label><div class="check">B</div></li><li><input type="radio" id="fondo-C2a" class="i-fondo2" name="selector2a"><label for="fondo-C2a"></label><div class="check">C</div></li><li><input type="radio" id="fondo-D2a" class="i-fondo2" name="selector2a"><label for="fondo-D2a"></label><div class="check">D</div></li><li><input type="radio" id="fondo-E2a" class="i-fondo2" name="selector2a"><label for="fondo-E2a"></label><div class="check">E</div></li>
 </ul><input class="bor-bott in-perc-fondos" onkeypress="return validaNUM(event)" onkeyup="format(this)" onchange="format(this)" type="text" step="1" min="0" max="100" maxlength="3" placeholder="0" /><span class="peso">%</span></div>
 
 <div class="container">
-<ul id="botoneraFondos">
-    <li><input type="radio" id="fondo-A2b" class="i-fondo2" name="selector2b" checked="checked"><label for="fondo-A2b"></label><div class="check">A</div></li>
-    <li><input type="radio" id="fondo-B2b" class="i-fondo2" name="selector2b">
-        <label for="fondo-B2b"></label><div class="check">B</div></li>
-    <li><input type="radio" id="fondo-C2b" class="i-fondo2" name="selector2b">
-        <label for="fondo-C2b"></label><div class="check">C</div></li>
-    <li><input type="radio" id="fondo-D2b" class="i-fondo2" name="selector2b">
-        <label for="fondo-D2b"></label><div class="check">D</div></li>
-    <li><input type="radio" id="fondo-E2b" class="i-fondo2" name="selector2b">
-        <label for="fondo-E2b"></label><div class="check">E</div></li>
-</ul><input class="bor-bott in-perc-fondos" onkeypress="return validaNUM(event)" onkeyup="format(this)" onchange="format(this)" type="text" step="1" min="0" max="100" maxlength="3" placeholder="0" /><span class="peso">%</span></div>
+<ul id="botoneraFondos"><li><input type="radio" id="fondo-A2b" class="i-fondo2" name="selector2b" checked="checked"><label for="fondo-A2b"></label><div class="check">A</div></li><li><input type="radio" id="fondo-B2b" class="i-fondo2" name="selector2b"><label for="fondo-B2b"></label><div class="check">B</div></li><li><input type="radio" id="fondo-C2b" class="i-fondo2" name="selector2b"><label for="fondo-C2b"></label><div class="check">C</div></li><li><input type="radio" id="fondo-D2b" class="i-fondo2" name="selector2b"><label for="fondo-D2b"></label><div class="check">D</div></li><li><input type="radio" id="fondo-E2b" class="i-fondo2" name="selector2b"><label for="fondo-E2b"></label><div class="check">E</div></li></ul><input class="bor-bott in-perc-fondos" onkeypress="return validaNUM(event)" onkeyup="format(this)" onchange="format(this)" type="text" step="1" min="0" max="100" maxlength="3" placeholder="0" /><span class="peso">%</span></div>
 </div>
                                                                 </div>
                                                                 <div class="row">
@@ -611,7 +570,7 @@
                                                             </li>
                                                         </ol>
                                                         <div class="row">
-                                                        <a id="btclon-two">+ Agregar otra cuenta o ahorro</a>
+                                                            <a id="btclon-two">+ Agregar otra cuenta o ahorro</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -654,11 +613,11 @@
                                                                         <div class="container mar-top-8">
                                                                             <input class="hidden" name="BirthDate" id="BirthDateInput">
                                                                             <div class="BirthDate input-group triple-input fixipad" id="BirthDate">
-                                                                                <input style="margin-top: 0;" class="col-md-3 bor-ask-tab birthDateMonth required" name ="birthDateMonth" data-required="true" aria-required="true" id="BirthDated" type="text" placeholder="DD" maxlength="2" size="2" onkeypress="return validaNUM(event)">
+                                                                                <input style="margin-top: 0;" class="col-md-3 bor-ask-tab birthDateDay required" name ="birthDateDay" data-required="true" aria-required="true" id="BirthDated" type="number" placeholder="DD" size="2" onkeypress="return validaNUM(event)">
                                                                                 <label style="margin-top: 0;" class="col-md-1 sectionBar">-</label>
-                                                                                <input style="margin-top: 0;" class="col-md-3 bor-ask-tab birthDateDay required" name="birthDateDay" data-required="true" aria-required="true" id="BirthDatem" type="text" placeholder="MM" maxlength="2" size="2" onkeypress="return validaNUM(event)">
+                                                                                <input style="margin-top: 0;" class="col-md-3 bor-ask-tab birthDateMonth required" name="birthDateMonth" data-required="true" aria-required="true" id="BirthDatem" type="number" placeholder="MM" size="2" onkeypress="return validaNUM(event)">
                                                                                 <label style="margin-top: 0;" class="col-md-1 sectionBar">-</label>
-                                                                                <input style="margin-top: 0;" class="col-md-4 bor-ask-tab birthDateYear required" name="birthDateYear" data-required="true" aria-required="true" id="BirthDatey" type="text" placeholder="AAAA" maxlength="4" size="4" onkeypress="return validaNUM(event)">
+                                                                                <input style="margin-top: 0;" class="col-md-4 bor-ask-tab birthDateYear required" name="birthDateYear" data-required="true" aria-required="true" id="BirthDatey" type="number" placeholder="AAAA" size="4" onkeypress="return validaNUM(event)">
                                                                             </div>
                                                                         </div>
                                                                     </div>

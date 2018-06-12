@@ -836,6 +836,13 @@ ol#dinamico li {
     position: relative;
 }
 
+ol#dinamico li.d1:not(:first-child),
+ol#dinamico li.d2:not(:first-child),
+ol#dinamico li.d3:not(:first-child)
+ {
+   margin-top: 1em;
+}
+
 .botonOculto .btdel {
     display: none;
 }
@@ -1034,7 +1041,7 @@ button.close {
     background-color: #E5F4FB;
     border: 1px solid #CBE6F2;
     margin: 0 auto;
-    padding: 14px 20px;
+    padding: 16px;
     border-radius: 2px;
     /* margin-bottom: 20px; */
 }
@@ -1207,6 +1214,8 @@ ul#botoneraFondos {
     float: left;
     height: 30px;
     overflow: hidden;
+    z-index: 1;
+    position: relative;
 }
 
 ul#botoneraFondos li {
@@ -2112,6 +2121,7 @@ box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.32); */
 .margin-boton {
     margin: 10px;
 }
+
 
 .botns {
     border-radius: 2px;
@@ -4215,6 +4225,9 @@ label{
         width: 20%;
         margin: 0 auto;
     }
+    #portamento_container #sidebar {
+        top: 0 !important;
+    }
 
     .hide-link {
         display: block!important;
@@ -4377,6 +4390,11 @@ label{
     /*body{
 background-color: peru;
 }*/
+[data-tooltip]:before {
+    left: 41px !important;
+    width: 10em !important;
+  }
+
     .login-trigger__label,
     .contact-trigger__label,
     .user-trigger__label {
@@ -4481,7 +4499,6 @@ background-color: peru;
 }
 
 @media (max-width: 767px) {
-
     .separador {
         background: none!important;
         padding-left: 0!important;
@@ -4497,14 +4514,10 @@ background-color: peru;
 
 
 @media (max-width: 634px) {
-    
     .separador {
         background: none!important;
         padding-left: 0!important;
-    }   
-}
-
-@media (max-width: 634px) {
+    } 
 
     .box-destacado_a {
         width: 100%!important;
@@ -4892,7 +4905,8 @@ background-color: peru;
     background: none;
     border:none;
     width: 18px;
-  }
+    bottom: 2px;
+}
   
   /* Hide the tooltip content by default */
   [data-tooltip]:before,

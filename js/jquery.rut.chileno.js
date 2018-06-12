@@ -12,7 +12,6 @@
 		return this.each(function(){
 			var $t = $(this);
 			$t.wrap('<div class="rut-container"></div>');
-			$t.attr('maxlength', 9);
 			if(defaults.formatear){
 				$t.on('blur', function(){
 					$t.val($.rut.formatear($t.val()));

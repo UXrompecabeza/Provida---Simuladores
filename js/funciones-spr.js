@@ -1,15 +1,38 @@
 $(document).ready(function() {
     
-    
+    //ANCLA
 
-        if ($(window).width() <= 768) {  
- 
-            $( ".ancla" ).append( "<div id='pensionate'>&nbsp;</div>" )
- 
-        }     
- 
-   
+    if ($(window).width() <= 768) {  
+
+        $( ".ancla" ).append( "<div id='pensionate'>&nbsp;</div>" )
+
+    }
     
+    function checkWidth() {
+        var windowSize = $(window).width();
+
+        if (windowSize <= 768) {
+            $('.ancla-tablet').removeAttr('id');
+            $('.ancla-desk').removeAttr('id');
+            $('.ancla-movil').attr('id', 'ancla');
+        }
+        else if (windowSize >= 769 && windowSize <= 992) {
+            $('.ancla-tablet').attr('id', 'ancla');
+            $('.ancla-desk').removeAttr('id');
+            $('.ancla-movil').removeAttr('id');
+        }
+        else if (windowSize >= 993) {
+            $('.ancla-desk').attr('id', 'ancla');
+            $('ancla-tablet').removeAttr('id');
+            $('.ancla-movil').removeAttr('id');
+        }
+    }
+
+    // Execute on load
+    checkWidth();
+    // Bind event listener
+    $(window).resize(checkWidth);
+
      // Add smooth scrolling to all links
      $("a").on('click', function(event) {
 
