@@ -47,7 +47,7 @@
             $('#nom_form').addClass("rut-error");
             return false;
 
-        } else if (b=="" || $('.input_rut').val().length < 11) {
+        } else if (b=="" || $('.input_rut').val().length < 9) {
             $('.input_rut').addClass("rut-error");
             return false;
 
@@ -111,6 +111,12 @@
         if ($(".input_rut") == '') {
             $('.input_rut').addClass("rut-error");
         } else {
+            $(".input_rut").removeClass("rut-error");
+        }
+    });
+
+    $('input.input_rut').on('keyup keydown keypress change paste', function () {
+        if ($('.input_rut').val().length >= 9) {
             $(".input_rut").removeClass("rut-error");
         }
     });
@@ -233,3 +239,33 @@
 $(function() {
     $('[data-toggle="tooltip"]').tooltip()
 })
+
+$(function maxValue1() {
+	$(document).on('keyup', '.date1', function(event) {
+        let max= 31;
+        let valor = parseInt(this.value);
+    	if(valor>max){
+    		this.value = max;
+        }
+	});
+});
+
+$(function maxValue2() {
+	$(document).on('keyup', '.date2', function(event) {
+        let max= 12;
+        let valor = parseInt(this.value);
+    	if(valor>max){
+    		this.value = max;
+        }
+	});
+});
+
+$(function maxValue3() {
+	$(document).on('keyup', '.date3', function(event) {
+        let max= 2018;
+        let valor = parseInt(this.value);
+    	if(valor>max){
+    		this.value = max;
+        }
+	});
+});

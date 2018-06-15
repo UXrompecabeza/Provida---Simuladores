@@ -66,7 +66,6 @@ $('input.birthDateYear').attr('maxLength', '4').keypress(limitMe);
 
 
 
-
 // <!-- SOLO NUMEROS EN INPUTS -->
 
 function validaNUM(e) {
@@ -174,7 +173,103 @@ $(function maxValue() {
 	});
 });
 
+$(function maxValue2() {
+	$(document).on('keyup', '.birthDateYear', function(event) {
+        let max= 2018;
+        let valor = parseInt(this.value);
+    	if(valor>max){
+    		this.value = max;
+        }
+	});
+});
+
+$(function maxValue2() {
+	$(document).on('keyup', '.birthDateMonth', function(event) {
+        let max= 12;
+        let valor = parseInt(this.value);
+    	if(valor>max){
+    		this.value = max;
+        }
+	});
+});
+
+$(function maxValue3() {
+	$(document).on('keyup', '.birthDateDay', function(event) {
+        let max= 31;
+        let valor = parseInt(this.value);
+    	if(valor>max){
+    		this.value = max;
+        }
+	});
+});
+
+$(function maxValue4() {
+	$(document).on('keyup', '.in-perc-fondos', function(event) {
+        let max= 100;
+        let valor = parseInt(this.value);
+    	if(valor>max){
+    		this.value = max;
+        }
+	});
+});
 
 
+/* Without prefix */
+var input = document.getElementById('with-prefix');
+input.addEventListener('keyup', function(e)
+{
+    input.value = format_number(this.value);
+});
+
+var input2 = document.getElementById('input-cifra');
+input2.addEventListener('keyup', function(e)
+{
+    input2.value = format_number(this.value);
+});
+
+var input3 = document.getElementById('spTotal');
+input3.addEventListener('keyup', function(e)
+{
+    input3.value = format_number(this.value);
+});
+
+var input4 = document.getElementById('tipoCuenta');
+input4.addEventListener('keyup', function(e)
+{
+    input4.value = format_number(this.value);
+});
+
+var input5 = document.getElementById('tipoCuenta');
+input5.addEventListener('keyup', function(e)
+{
+    input5.value = format_number(this.value);
+});
+
+function format_input(e) {
+    $(e).on('keyup keydown keypress change paste', function () {
+        e.value = format_number(this.value);
+    });
+}
+
+
+/* Function */
+function format_number(number, prefix, thousand_separator, decimal_separator)
+{
+    var thousand_separator = thousand_separator || '.',
+        decimal_separator = decimal_separator || ',',
+        regex		= new RegExp('[^' + decimal_separator + '\\d]', 'g'),
+        number_string = number.replace(regex, '').toString(),
+        split	  = number_string.split(decimal_separator),
+        rest 	  = split[0].length % 3,
+        result 	  = split[0].substr(0, rest),
+        thousands = split[0].substr(rest).match(/\d{3}/g);
+    
+    if (thousands) {
+        separator = rest ? thousand_separator : '';
+        result += separator + thousands.join(thousand_separator);
+    }
+    result = split[1] != undefined ? result + decimal_separator + split[1] : result;
+    return prefix == undefined ? result : (result ? prefix + result : '');
+};
 
 
