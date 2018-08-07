@@ -149,20 +149,6 @@ function validarRango(elemento) {
 
 }
 
-// function sumar() {
-// var total = 0;
-// $(".cifra").each(function() {
-//     if (isNaN(parseFloat($(this).val()))) {
-//     total += 0;
-//     } else {
-//     total += parseFloat($(this).val());
-//     }
-// });
-
-// document.getElementById('spTotal').value=total;
-
-// }
-
 $(function maxValue() {
 	$(document).on('keyup', '.edadform', function(event) {
         let max= 120;
@@ -245,12 +231,12 @@ input5.addEventListener('keyup', function(e)
     input5.value = format_number(this.value);
 });
 
+
 function format_input(e) {
     $(e).on('keyup keydown keypress change paste', function () {
         e.value = format_number(this.value);
     });
 }
-
 
 /* Function */
 function format_number(number, prefix, thousand_separator, decimal_separator)

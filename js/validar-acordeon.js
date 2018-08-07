@@ -10,15 +10,13 @@ function validateAccordion() {
     var v9 = validate9();
     var v10 = validate10();
     var v11 = validate2b();
-    var v12 = validate6b();
-    var v13 = validate8b();
+    var v14 = validate11();
     
-    if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10 && v11 && v12 && v13) {
+    
+    if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10 && v11 && v14) {
         return true
     } else {
         $(".rut-error").first().focus();
-        // var scroll = $(window).scrollTop();
-        // window.scrollTo(0,scroll-83)
         return false;
     }
 };
@@ -27,9 +25,11 @@ function validate1() {
     var a = document.forms["form-accordion"]["e-input-cantPension"].value;
     var b = document.forms["form-accordion"]["edadform"].value;
 
-    if (a == "" ) {
+    if (a == "" || a == "0" ) {
         $('.e-input-cantPension').addClass("rut-error");
         $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
+        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -41,6 +41,8 @@ function validate2() {
 
     if (b =="") {
         $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
+        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.edadform').addClass("rut-error");
         $('.e-btn-acordion').attr("disabled");
         return false;
@@ -54,6 +56,8 @@ function validate2b() {
 
     if (b < 45) {
         $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
+        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.edadform').addClass("rut-error");
         $('.e-btn-acordion').attr("disabled");
         return false;
@@ -68,6 +72,8 @@ function validate3() {
     if (c =="" && d) {
         $('.e-monto1').addClass("rut-error");
         $('.e-monto1').parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.e-monto1').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.e-monto1').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -81,6 +87,8 @@ function validate4() {
     if (e && f =="") {
         $('.e-monto2').addClass("rut-error");
         $('.e-monto2').parent().parent().parent().parent().parent().css( "display","block" );
+        $('.e-monto2').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.e-monto2').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -94,6 +102,8 @@ function validate5() {
     if (e && f =="") {
         $('.e-monto2').addClass("rut-error");
         $('.e-monto2').parent().parent().parent().parent().parent().css( "display","block" );
+        $('.e-monto2').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.e-monto2').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -101,12 +111,13 @@ function validate5() {
     }
 };
 function validate6() {
-    var g = $('.e-parent').val()!='default';
-    var h1 = document.forms["form-accordion"]["birthDateMonth"].value;
+    var g = $('.e-parent');
 
-    if (g && h1 =="") {
+    if (g.val()!='default' && g.parents(".bg-skyblue-acordeon").find('.birthDateMonth').val() == "") {
         $('.birthDateMonth').addClass("rut-error");
         $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -114,26 +125,14 @@ function validate6() {
     }
 };
 
-function validate6b() {
-    var g = $('.e-parent').val()!='default';
-    var h1 = document.forms["form-accordion"]["birthDateMonth"].value;
-
-    if (g && h1 > 13) {
-        $('.birthDateMonth').addClass("rut-error");
-        $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
-        $('.e-btn-acordion').attr("disabled");
-        return false;
-    } else {
-        return true;
-    }
-};
 function validate7() {
-    var g = $('.e-parent').val()!='default';
-    var h2 = document.forms["form-accordion"]["birthDateDay"].value;
+    var g = $('.e-parent');
 
-    if (g &&  h2 =="") {
+    if (g.val()!='default' &&  g.parents(".bg-skyblue-acordeon").find('.birthDateDay').val() == "") {
         $('.birthDateDay').addClass("rut-error");
-        $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.birthDateDay').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.birthDateDay').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.birthDateDay').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -141,25 +140,13 @@ function validate7() {
     }
 };
 function validate8() {
-    var g = $('.e-parent').val()!='default';
-    var h3 = document.forms["form-accordion"]["birthDateYear"].value;
+    var g = $('.e-parent');
 
-    if (g && h3 =="" ) {
+    if (g.val()!='default' && g.parents(".bg-skyblue-acordeon").find('.birthDateYear').val() == "" ) {
         $('.birthDateYear').addClass("rut-error");
         $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
-        $('.e-btn-acordion').attr("disabled");
-        return false;
-    } else {
-        return true;
-    }
-};
-function validate8b() {
-    var g = $('.e-parent').val()!='default';
-    var h3 = document.forms["form-accordion"]["birthDateYear"].value;
-
-    if (g && h3 > 2019 ) {
-        $('.birthDateYear').addClass("rut-error");
-        $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -167,12 +154,13 @@ function validate8b() {
     }
 };
 function validate9() {
-    var g = $('.e-parent').val()!='default';
-    var i = $('.e-estCivil').val()=='default';
+    var g = $('.e-parent');
 
-    if (g && i) {
+    if (g.val()!='default' && g.parents(".bg-skyblue-acordeon").find('.e-estCivil').val()=='default') {
         $('.e-estCivil').addClass("rut-error");
         $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {
@@ -180,12 +168,22 @@ function validate9() {
     }
 };
 function validate10() {
-    var g = $('.e-parent').val()!='default';
-    var j = $('.e-grado').val()=='default';
+    var g = $('.e-parent');
 
-    if (g && j ) {
+    if (g.val()!='default' && g.parents(".bg-skyblue-acordeon").find('.e-grado').val()=='default' ) {
         $('.e-grado').addClass("rut-error");
         $('.birthDateMonth').parent().parent().parent().parent().parent().parent().parent().css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
+        $('.birthDateMonth').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
+        $('.e-btn-acordion').attr("disabled");
+        return false;
+    } else {
+        return true;
+    }
+};
+
+function validate11() {
+    if  ($(".rut-error").length > 0){
         $('.e-btn-acordion').attr("disabled");
         return false;
     } else {

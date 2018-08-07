@@ -1,3 +1,6 @@
+  
+    
+    
     function limitMe(e) {
         if (e.keyCode == 8) { return true; }
         return this.value.length < $(this).attr("maxLength");
@@ -8,7 +11,6 @@
     $('input#rut-limit').attr('maxLength', '9').keypress(limitMe);  
     $('input#nom_form').attr('maxLength', '30').keypress(limitMe);
     $('input#nom_form').attr('maxLength', '30').keypress(limitMe);
-    // $('input.input_rut').attr('maxLength', '9').keypress(limitMe);
 
 
     $("#nom_form").keypress(function() {
@@ -17,12 +19,12 @@
         }
     });
 
-    $('input.input_rut').on('keyup keydown keypress change paste', function () {
-        var maxChars = 9;
-        if ($(this).val().length > maxChars) {
-            $(this).val($(this).val().substr(0, maxChars));
-        }
-    });
+    // $('input.input_rut').on('keyup keydown keypress change paste', function () {
+    //     var maxChars = 12;
+    //     if ($(this).val().length > maxChars) {
+    //         $(this).val($(this).val().substr(0, maxChars));
+    //     }
+    // });
     
     function validateForm() {
         var a=document.forms["form-pension"]["answer_a"].value;

@@ -2,7 +2,7 @@
 	$.fn.rut = function(opt){
 		var defaults = $.extend({
 			formatear : true,
-			on : 'blur',
+			on : 'keyup',
 			placeholder : true,
 			fn_error : function(input){
 				mostrar_error(input, defaults.error_html);
@@ -13,7 +13,7 @@
 			var $t = $(this);
 			$t.wrap('<div class="rut-container"></div>');
 			if(defaults.formatear){
-				$t.on('blur', function(){
+				$t.on('keyup', function(){
 					$t.val($.rut.formatear($t.val()));
 				});
 			}
