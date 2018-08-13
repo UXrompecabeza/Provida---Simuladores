@@ -793,9 +793,9 @@ background-color: peru;
         background: none!important;
         padding-left: 0!important;
     }
-    ul#botoneraFondos {
+    ul.botoneraFondos1 {
     padding-right: 0;
-}
+    }
 
 }
 

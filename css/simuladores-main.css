@@ -6,7 +6,6 @@
 z-index: 99999999 !important;
 }
 
-
 .radios {
     margin-top: 7px;
 }
@@ -159,12 +158,6 @@ body {
     line-height: 1.3em;
 }
 
-
-/*
-.range-area-txt {
-    height: 6em;
-}
-*/
 
 .grey-font-sim {
     font-weight: 600;
@@ -326,8 +319,6 @@ body {
     padding-right: 1em;
 }
 
-#wrapper {
-}
 
 #sidebar {
     float: left;
@@ -367,6 +358,9 @@ span.ui-slider-handle.ui-state-default::before {
     margin-left: -10px;
 }
 
+select::-ms-expand {
+    display: none !important;
+}
 
 
 /* take the positioning of the sidebar, and become the start point for the sidebar positioning */
@@ -561,6 +555,7 @@ a:visited {
         width: 100% !important;
         margin: 0 auto !important;
         position: relative !important;
+        top: 0 !important;
     }
 
     .modal {
@@ -1204,9 +1199,13 @@ button.close {
     background-color: rgba(245, 208, 208, 0.35);
 }
 
+.rut-error ::placeholder {
+    color: #eb4646!important;
+}
+
 /*BOTONERA FONDO*/
 
-ul#botoneraFondos {
+ul.botoneraFondos {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -1218,7 +1217,7 @@ ul#botoneraFondos {
     position: relative;
 }
 
-ul#botoneraFondos li {
+ul.botoneraFondos li {
     color: #AAAAAA;
     display: inline-block;
     position: relative;
@@ -1227,14 +1226,14 @@ ul#botoneraFondos li {
     margin: 0;
 }
 
-ul#botoneraFondos li input[type=radio] {
+ul.botoneraFondos li input[type=radio] {
     position: absolute;
     visibility: hidden;
     top: 0;
     left: 0;
 }
 
-ul#botoneraFondos li label {
+ul.botoneraFondos li label {
     display: block;
     position: relative;
     font-size: 1.35em;
@@ -1244,7 +1243,7 @@ ul#botoneraFondos li label {
     cursor: pointer;
 }
 
-ul#botoneraFondos li .check {
+ul.botoneraFondos li .check {
     display: block;
     position: absolute;
     border: 0.063em solid #ccc;
@@ -1259,26 +1258,24 @@ ul#botoneraFondos li .check {
     background-color: #fff;
 }
 
-ul#botoneraFondos li:hover .check {
+ul.botoneraFondos li:hover .check {
     border: 0.125em solid #B3CC7F;
     background-color: #D5EFA0;
 }
 
 
-ul#botoneraFondos li input[type=radio]:checked~.check {
+ul.botoneraFondos li input[type=radio]:checked~.check {
     border: 0.125em solid #B3CC7F;
     background-color: #D5EFA0;
 }
 
-ul#botoneraFondos li input[type=radio]:checked~.check::before {
+ul.botoneraFondos li input[type=radio]:checked~.check::before {
     background: #0DFF92;
 }
 
-ul#botoneraFondos li input[type=radio]:checked~label {
+ul.botoneraFondos li input[type=radio]:checked~label {
     color: #0DFF92;
 }
-
-
 
 /*BOTONERA FONDO*/
 
@@ -4386,24 +4383,31 @@ label{
 
 /* Landscape phones and portrait tablets */
 
-@media (max-width: 768px) {
-    /*body{
-background-color: peru;
-}*/
+@media (max-width: 767px) {
+ 
 [data-tooltip]:before {
     left: 41px !important;
     width: 10em !important;
   }
 
-    .login-trigger__label,
+    /* .login-trigger__label, */
     .contact-trigger__label,
     .user-trigger__label {
         display: none !important;
     }
 
+    .login-trigger__label {
+        text-align: right;
+    } 
+
     .cero0 {
         padding: 20px 0px;
         font-size: 20px;
+    }
+
+    .login-trigger__label svg {
+        position: relative;
+        top: 3px;
     }
 
     .title_header {
@@ -4617,10 +4621,32 @@ background-color: peru;
 
 @media (max-width: 480px) {
 
+    .login-trigger {
+        text-align: right;
+        right: 0 !important;
+        width: 100% !important;
+    }
+    .login-trigger__label {
+        width: 75% !important;
+    }
+
+    .login-trigger__label span {
+        line-height: 10px;
+        text-align: left;
+        margin-right: 8px;
+        display: block;
+        width: 75%;
+    }
+
+    .login-trigger__label svg {
+        position: relative;
+        top: -17px;
+        width: 25%;
+    }
+
     .btns-result-general {
         margin-bottom: 1em;
     }
-    
     
     .hide-mov1,
     .hide-mov2 {
@@ -4859,7 +4885,7 @@ background-color: peru;
         background: none!important;
         padding-left: 0!important;
     }
-    ul#botoneraFondos {
+    ul.botoneraFondos {
         padding-right: 0;
     }
 

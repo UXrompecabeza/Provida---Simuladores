@@ -1,6 +1,4 @@
 function validateAccordion() {      
-    var v1 = validate1();
-    var v2 = validate2();
     var v3 = validate3();
     var v4 = validate4();
     var v5 = validate5();
@@ -9,11 +7,9 @@ function validateAccordion() {
     var v8 = validate8();
     var v9 = validate9();
     var v10 = validate10();
-    var v11 = validate2b();
     var v14 = validate11();
     
-    
-    if (v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10 && v11 && v14) {
+    if ( v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10 && v14) {
         return true
     } else {
         $(".rut-error").first().focus();
@@ -21,50 +17,6 @@ function validateAccordion() {
     }
 };
 
-function validate1() {
-    var a = document.forms["form-accordion"]["e-input-cantPension"].value;
-    var b = document.forms["form-accordion"]["edadform"].value;
-
-    if (a == "" || a == "0" ) {
-        $('.e-input-cantPension').addClass("rut-error");
-        $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
-        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
-        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
-        $('.e-btn-acordion').attr("disabled");
-        return false;
-    } else {
-        return true;
-    }
-};
-function validate2() {
-    var b = document.forms["form-accordion"]["edadform"].value;
-
-    if (b =="") {
-        $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
-        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
-        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
-        $('.edadform').addClass("rut-error");
-        $('.e-btn-acordion').attr("disabled");
-        return false;
-    } else {
-        return true;
-    }
-};
-
-function validate2b() {
-    var b = document.forms["form-accordion"]["edadform"].value;
-
-    if (b < 45) {
-        $('.e-input-cantPension').parent().parent().parent().parent().css( "display","block" );
-        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-minus").css( "display","block" );
-        $('.e-input-cantPension').parents(".border-top").children(".accordion__title").children(".icon-plus").css( "display","none" );
-        $('.edadform').addClass("rut-error");
-        $('.e-btn-acordion').attr("disabled");
-        return false;
-    } else {
-        return true;
-    }
-};
 function validate3() {
     var c = document.forms["form-accordion"]["e-monto1"].value;
     var d = $('.e-prod1').val()!='default';
@@ -201,5 +153,9 @@ $("select").on('change', function() {
     if ($(this).val()!='default') {
         $(this).removeClass('rut-error');
     } 
+});
+
+$('input').bind('contextmenu',function(e){
+    return false;
 });
 

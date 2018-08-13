@@ -1,6 +1,3 @@
-  
-    
-    
     function limitMe(e) {
         if (e.keyCode == 8) { return true; }
         return this.value.length < $(this).attr("maxLength");
@@ -18,13 +15,6 @@
             $("#nom_form").removeClass("rut-error");
         }
     });
-
-    // $('input.input_rut').on('keyup keydown keypress change paste', function () {
-    //     var maxChars = 12;
-    //     if ($(this).val().length > maxChars) {
-    //         $(this).val($(this).val().substr(0, maxChars));
-    //     }
-    // });
     
     function validateForm() {
         var a=document.forms["form-pension"]["answer_a"].value;
@@ -33,7 +23,7 @@
         var d=document.forms["form-pension"]["DOB2"].value;
         var e=document.forms["form-pension"]["DOB3"].value;
                     
-        if (a=="" && b=="" && c=="" && d=="" && e=="" && $('input[type="radio"]').is(':checked')==false && $('#renta_bruta_1').val() == '0' && $('#renta_bruta_2').val() == '0') {
+        if (a=="" && b=="" && c=="" && d=="" && e=="" && $('input[type="radio"]').is(':checked')==false) {
             $('.input_rut').addClass("rut-error");
             $('#nom_form').addClass("rut-error");
             $('.date1').addClass("rut-error");
@@ -41,7 +31,6 @@
             $('.date3').addClass("rut-error");
             $(".sex1").addClass("rut-error");
             $(".sex2").addClass("rut-error");
-            $(".validacion-d").removeClass("hide");
             $('.env1').attr("disabled");
             return false;
 
@@ -74,18 +63,6 @@
             $('.sex1').addClass("rut-error");
             $('.sex2').addClass("rut-error");
             return false;
-        }else if ($('#renta_bruta_1').val() == '0') {
-            $(".validacion-d").removeClass("hide");
-            return false;
-        }else if ($('#renta_bruta_2').val() == '0') {
-            $(".validacion-d").removeClass("hide");
-            return false;
-        }else if ($('#renta_bruta_1').val() == '') {
-            $(".validacion-d").removeClass("hide");
-            return false;
-        }else if ($('#renta_bruta_2').val() == '') {
-            $(".validacion-d").removeClass("hide");
-            return false;
         }else {
             $("#nom_form").removeClass("rut-error");
             $(".input_rut").removeClass("rut-error");
@@ -96,7 +73,6 @@
                 $('.sex1').removeClass("rut-error");
             $('.sex2').removeClass("rut-error");
             $('.date3').removeClass("rut-error");
-            $(".validacion-d").addClass("hide");
             $('.env1').removeAttr("disabled");
         }
     }
@@ -121,6 +97,10 @@
         if ($('.input_rut').val().length >= 9) {
             $(".input_rut").removeClass("rut-error");
         }
+    });
+
+    $('#nom_form').on('keyup keydown keypress change paste', function () {
+         $(this).removeClass("rut-error");
     });
 
     $(".date1").keypress(function() {
@@ -270,4 +250,8 @@ $(function maxValue3() {
     		this.value = max;
         }
 	});
+});
+
+$('input').bind('contextmenu',function(e){
+    return false;
 });

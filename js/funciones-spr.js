@@ -16,8 +16,13 @@ $(document).ready(function() {
             $('.ancla-desk').removeAttr('id');
             $('.ancla-movil').attr('id', 'ancla');
         }
-        else if (windowSize >= 769 && windowSize <= 992) {
+        else if (windowSize >= 801 && windowSize <= 992) {
             $('.ancla-tablet').attr('id', 'ancla');
+            $('.ancla-desk').removeAttr('id');
+            $('.ancla-movil').removeAttr('id');
+        }
+        else if (windowSize >= 769 && windowSize <= 800) {
+            $('.ancla-tablet2').attr('id', 'ancla');
             $('.ancla-desk').removeAttr('id');
             $('.ancla-movil').removeAttr('id');
         }

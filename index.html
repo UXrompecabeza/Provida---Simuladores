@@ -66,7 +66,8 @@
                 </div>
                 <div class="col-xs-4 col-sm-4 global-header__right">
                     <div class="col login-trigger pull-right linkOnly" title="LOGIN" data-target="login-container">
-                        <a class="login-trigger__label" href="#" target="_blank" id="terminos-y-condiciones_header_global-loginPagePath"> Sucursal Virtual 
+                        <a class="login-trigger__label" href="#" target="_blank" id="terminos-y-condiciones_header_global-loginPagePath"> 
+                            <span>Sucursal Virtual</span> 
                             <svg id="icon-secure-locked" viewBox="0 0 32 32" width="14px" height="14px">
                                 <title>secure-locked</title>
                                 <path class="path1" d="M24.8 10.080v-4c0-3.36-2.72-6.080-6.080-6.080h-4.48c-3.36 0-6.080 2.72-6.080 6.080v4.16h-3.68v21.76h24v-21.92h-3.68zM11.68 6.88c0-1.92 1.6-3.36 3.36-3.36h2.72c1.92 0 3.36 1.6 3.36 3.36v3.2h-9.6v-3.2zM24.96 28.32h-16.8v-14.72h16.96v14.72z"></path>
@@ -177,7 +178,7 @@
                                     ¿Cuál es tu nombre?
                                 </div>
                                 <div class="container">
-                                    <input id="nom_form" class="bor-ask-tab" name="answer_a" type="text" type="text" onkeypress="return soloLetras(event)" tabindex="1"></input>
+                                    <input id="nom_form" class="bor-ask-tab" name="answer_a" type="text" type="text" onkeypress="return soloLetras(event)" tabindex="1" autocomplete="off"></input>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +188,7 @@
                                     ¿Cuál es tu rut?
                                 </div>
                                 <div class="container">
-                                    <input class="input_rut bor-ask-tab" name="answer_b" type="text" tabindex="2"></input>
+                                    <input class="input_rut bor-ask-tab" name="answer_b" type="text" tabindex="2" autocomplete="off"></input>
                                 </div>
                             </div>
                         </div>
@@ -197,11 +198,11 @@
                                     ¿En qué fecha naciste?
                                 </div>
                                 <div class="BirthDate input-group triple-input" id="BirthDate">
-                                    <input id="date2" name="DOB1" type="number" size="2" maxlength="2" placeholder="DD" data-required="true" aria-required="true" id="DOB1" style="font-size:13px" class="col-md-3 col-sm-3 col-xs-3 date1 bor-ask-tab birthDateMonth required" onkeypress="return validaNUM(event)" onChange="return maxValue1()" tabindex="3">
+                                    <input id="date2" name="DOB1" type="number" size="2" maxlength="2" autocomplete="off" placeholder="DD" data-required="true" aria-required="true" style="font-size:13px" class="col-md-3 col-sm-3 col-xs-3 date1 bor-ask-tab birthDateMonth required" onkeypress="return validaNUM(event)" onChange="return maxValue1()" tabindex="3">
                                     <label class="col-md-1 col-sm-1 col-xs-1 sectionBar">-</label>
-                                    <input id="date3" name="DOB2" type="number" size="2" maxlength="2" placeholder="MM" data-required="true" aria-required="true" id="DOB2" class="col-md-3 col-sm-3 col-xs-3 bor-ask-tab date2 birthDateDay required" tabindex="4" onChange="return maxValue2()" onkeypress="return validaNUM(event)">
+                                    <input id="date3" name="DOB2" type="number" size="2" maxlength="2" autocomplete="off" placeholder="MM" data-required="true" aria-required="true" class="col-md-3 col-sm-3 col-xs-3 bor-ask-tab date2 birthDateDay required" tabindex="4" onChange="return maxValue2()" onkeypress="return validaNUM(event)">
                                     <label class="col-md-1 col-sm-1 col-xs-1 sectionBar">-</label>
-                                    <input id="date4" name="DOB3" type="number" size="4" maxlength="4" placeholder="AAAA" data-required="true" aria-required="true" id="DOB3" class="col-md-4 col-sm-4 col-xs-4 bor-ask-tab date3 birthDateYear required indx_3" tabindex="5" onkeypress="return validaNUM(event)" onChange="return maxValue3()">
+                                    <input id="date4" name="DOB3" type="number" size="4" maxlength="4" autocomplete="off" placeholder="AAAA" data-required="true" aria-required="true" class="col-md-4 col-sm-4 col-xs-4 bor-ask-tab date3 birthDateYear required indx_3" tabindex="5" onkeypress="return validaNUM(event)" onChange="return maxValue3()">
                                 </div>
                             </div>
                         </div>
@@ -246,7 +247,7 @@
                                                 <div class="range range-primary mar-top-32">
                                                     <div class="row slider-container">
                                                         <div class="relative-position not-i-container">
-                                                            <span class="currencyinput">$<input id="renta_bruta_1" runat="server" class="marg-bottom-20 calculated-input range-field-1" type="text" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ " placeholder="0"/></span>
+                                                            <span class="currencyinput">$<input id="renta_bruta_1" runat="server" class="marg-bottom-20 calculated-input range-field-1" type="tel" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ " placeholder="0"/></span>
                                                         </div>
                                                         <div id="slider-1" class="range-slider-1"></div>
                                                     </div>
@@ -260,7 +261,7 @@
                                                 <div class="range range-primary mar-top-32">
                                                     <div class="row slider-container">
                                                         <div class="relative-position not-i-container">
-                                                            <span class="currencyinput">$<input id="renta_bruta_2" runat="server" class="marg-bottom-20 calculated-input range-field-2" type="text" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ "
+                                                            <span class="currencyinput">$<input id="renta_bruta_2" runat="server" class="marg-bottom-20 calculated-input range-field-2" type="tel" value="0" data-func="transformToNumber" data-event="keyup" maxlength="15" limit-number="15" data-prefix="$ "
                                                             placeholder="0" /></span>
                                                         </div>
                                                         <div id="slider-2" class="range-slider-2"></div>
