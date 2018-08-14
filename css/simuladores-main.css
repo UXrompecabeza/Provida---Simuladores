@@ -10,12 +10,170 @@ z-index: 99999999 !important;
     margin-top: 7px;
 }
 
+
+.accordion__content .e-input-cantPension {
+    width: 60%;
+}
+.accordion__content .edadform {
+    width: 30%;
+}
+
+.accordion__content .e-monto1 {
+    width: 80%;
+}
+
+.accordion__content .box-result-item .peso_exc {
+    margin-left: 10px;
+}
+
+.accordion__content .box-result-item input {
+    height:25px; 
+    width: 80%; 
+    padding:0; 
+    margin-top:-16px;
+}
+
+.accordion__content #tipoCuenta {
+    width: 80%;
+}
+
+.accordion__content #BirthDate input {
+    margin-top: 0;
+}
+
+.accordion__content #BirthDate label {
+    margin-top: 0;
+}
+
+.control-group div {
+    margin-top: -4px;
+}
+
+.box-pension {
+    z-index: 1000;
+}
+
+.box-pension .box_resultado {
+    padding: 1em;
+}
+
+.box-pension .box_resultado .box-title {
+    text-align: left; 
+    font-size: 14px;
+    margin-bottom: 0!important;
+    padding: 0 0 1em 0;
+}
+
+.box-pension .box_resultado .valor {
+    text-align: left; 
+    font-size: 2.5em!important;
+    font-weight: 600;
+}
+
+.box-pension .box_resultado .dato {
+    text-align: left; 
+    font-size: 12px;
+    margin-bottom: 0!important;
+    padding: 1.5em 0 0 0; 
+    line-height:16px;
+}
+
+.box-medidor p {
+    margin-top: 16px; 
+    line-height: 18px;
+}
+
+.box-medidor img {
+    width: auto;
+}
+
+.box-medidor div {
+    line-height: 20px;
+    display: block;
+    font-size: 20px;
+    height: 20px;
+}
+
+.box-recomendacion .space {
+    line-height: 30px;
+    display: block;
+    font-size: 30px;
+    height: 30px;
+}
+
+.box-recomendacion .anchofix {
+    padding: 1em 1em;
+    display:inline-block;
+}
+
+.box-recomendacion h1 {
+    padding-top: 1em;
+}
+
+.box-recomendacion .bg-skyblue {
+    padding: 1em 1em;
+    display:inline-block;
+}
+
+.box-recomendacion .box-title-result {
+    padding-top: 2em;
+}
+
+.box-botonera_simple .fa-file-pdf-o {
+    margin-right: 6px;
+}
+
+.box-botonera_simple .fa-phone {
+    margin-right: 6px;
+}
+
+.box-botonera_simple .show-modal-content .modal-body p {
+    font-family: Arial, sans-serif;
+}
+
+.box-botonera_simple .show-modal-content .modal-footer {
+    line-height: 16px;
+    font-family: arial, sans-serif;
+}
+
+.box-botonera_simple .show-modal-content .modal-footer button{
+    width: 100%;
+}
+
+.box-botonera_perso .contatMeSidebarBtn {
+    width: 100%;
+}
+
+.box-botonera_perso .panel-heading .btns-standar-w i{
+    margin-right: 6px;
+}
+
+
+
+footer .footer-title {
+    font-size: 1.3em;
+    line-height: 25px;
+}
+
+footer .product-module__small__imagewrapper img {
+    width: auto;
+    height: 50px;
+}
+
+footer .product-module__small--product__wrapper .cro-link-1 {
+    font-size: 11px; 
+    line-height: 16px; 
+    padding-top: 20px;
+}
+
 .radios .radio{
     background: url('../img/form_radio_unselected_gray.png') left center no-repeat;
     background-size: 20px 20px;
     text-indent: 22px;
     width: 118px;
 }
+
+
 
 .radios input[type=radio]{
     display:none;
@@ -388,6 +546,43 @@ select::-ms-expand {
 .product-module {
     text-align: center;
     max-width: 80% !important;
+    margin-top: 30px !important;
+}
+
+.product-module .product-module__small--main h2 {
+    font-size: 1.3em;
+    line-height: 25px;
+}
+
+.product-module__small__imagewrapper {
+    text-decoration: none;
+    font-size: 11px;
+    line-height: 16px;
+    padding-top: 20px;
+}
+
+.product-module__small__imagewrapper img {
+    width: auto;
+    height: 50px;
+}
+
+.indx_11 {
+    width: auto;
+    height: 50px;
+}
+
+.cro-link-1 {
+    font-size: 11px; 
+    line-height: 16px; 
+    padding-top: 20px;
+}
+
+.btns-standar-w i {
+    margin-right: 6px;
+}
+
+.birthDateMonth {
+    font-size:13px;
 }
 
 .barra-hide {
@@ -400,7 +595,7 @@ select::-ms-expand {
 
 .in-perc-fondos {
     height: 25px;
-    width: 20% !important;
+    width: 19% !important;
     padding: 0;
     margin-top: -16px;
 }
@@ -701,7 +896,8 @@ a.icon-secure-locked:hover {
 	color: #fff;
 	line-height: 18px;
 	text-transform: uppercase;
-	font-size: 12px;
+    font-size: 12px;
+    line-height: 10px;
 }
 
 .in_view {
@@ -716,9 +912,6 @@ a.icon-secure-locked:hover {
     margin-top: 0.5em !important;
 }
 
-.accordion__content {
-
-}
 
 .mar-top-16 {
     margin-top: 1em !important;
@@ -2813,21 +3006,11 @@ button.btn {
 
 
 
-/*
-.box_resultado:hover {
-background-color: #e0e0e0;
-}
-*/
 
 .res_destacado {
     background-color: #A4CE4E;
 }
 
-
-
-/*.res_destacado:hover {
-background-color: #a4ce4e;
-}*/
 
 .regimen {
     font-family: 'Georgia', 'Times New Roman', 'Times', 'serif';
@@ -2848,15 +3031,13 @@ background-color: #a4ce4e;
     margin-bottom: 10px;
 }
 
-.signopeso {
-    /*
-font-size: 20px;
-margin-bottom: 20px;
-position: relative;
-bottom: 10px;
-*/
+.panel-heading {
+    padding: 0px 0px !important;
 }
 
+.panel-heading .botns-provida-ghost{
+    margin-right: 6px;
+}
 
 
 /*================= informacion =================*/
@@ -3842,8 +4023,13 @@ bottom: 10px;
     text-align: center;
 }
 
-.fixtxt{
+.show-modal-content  .modal-body{
+    font-family: Arial, sans-serif;
+}
 
+.show-modal-content  .modal-footer{
+    line-height: 16px;
+    font-family: arial, sans-serif;
 }
 
 .tiemposelect {
@@ -3851,19 +4037,28 @@ bottom: 10px;
 }
 
 
+#exito-val {
+    padding: .5em 0 0 0;
+    display: block;
+    font-size: .6em;
+    float: left;
+    color: #ccc;
+    text-decoration: underline;
+}
 
 
-
-.upadtemail {
+.updatemail {
     font-size: 14px !important;
     text-align: left;
 }
 
-.upadtemail label{
-line-height: 18px !important;
+.updatemail label{
+    line-height: 18px !important;
+    font-size: 14px !important;
+    font-family: 'Noto Sans', sans-serif!important;
 }
 
-.upadtemail .radio {
+.updatemail .radio {
     width: auto;
 }
 

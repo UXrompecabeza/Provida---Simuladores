@@ -66,11 +66,11 @@
         }else {
             $("#nom_form").removeClass("rut-error");
             $(".input_rut").removeClass("rut-error");
-                $('.inrut-val').removeClass("rut-error");
+            $('.inrut-val').removeClass("rut-error");
             $('#nom_form').removeClass("rut-error");
             $('.date1').removeClass("rut-error");
             $('.date2').removeClass("rut-error");
-                $('.sex1').removeClass("rut-error");
+            $('.sex1').removeClass("rut-error");
             $('.sex2').removeClass("rut-error");
             $('.date3').removeClass("rut-error");
             $('.env1').removeAttr("disabled");
