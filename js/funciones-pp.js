@@ -1,5 +1,5 @@
 $(function() {
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
 })
 
 var menu = $('.menue'),
@@ -14,6 +14,24 @@ if (mediaquery.matches) {
 
 } else {
     $('#sidebar').portamento({ wrapper: $('#wrapper') }); 
+}
+
+function birthDayMonth(event) {
+    let input = event.target
+    let min = 1;
+    let valor = parseInt(input.value);
+    if (valor < 1) {
+        input.value = min;
+    }
+}
+
+function birthDayYear(event) {
+    let input = event.target
+    let min = 1900;
+    let valor = parseInt(input.value);
+    if (valor < 1900) {
+        input.value = min;
+    }
 }
 
 // <!-- VALIDADOR TEXTO -->
@@ -101,18 +119,6 @@ $(function () {
     });
 
 });
-
-function format(input) {
-    var num = input.value.replace(/\./g, '');
-    if (!isNaN(num)) {
-        num = num.toString().split('').reverse().join('').replace(/(?=\d*\.?)(\d{3})/g, '$1.');
-        num = num.split('').reverse().join('').replace(/^[\.]/, '');
-        input.value = num;
-    } else {
-        alert('Solo se permiten numeros');
-        input.value = input.value.replace(/[^\d\.]*/g, '');
-    }
-}
 
 $(function() {
     $('.edad-input').keydown(function(e) {
@@ -257,5 +263,7 @@ function format_number(number, prefix, thousand_separator, decimal_separator)
     result = split[1] != undefined ? result + decimal_separator + split[1] : result;
     return prefix == undefined ? result : (result ? prefix + result : '');
 };
+
+
 
 

@@ -159,3 +159,52 @@ $('input').bind('contextmenu',function(e){
     return false;
 });
 
+function validateChildren(event) {
+    let select = event.target;
+    let day = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[0].childNodes[1].childNodes[1].childNodes[1].children[0];
+    let month = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[0].childNodes[1].childNodes[1].childNodes[1].children[2];
+    let year = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[0].childNodes[1].childNodes[1].childNodes[1].children[4];
+    let state = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[0].childNodes[0].childNodes[2].childNodes[0].childNodes[0];
+    let inv = event.target.parentElement.parentElement.parentElement.parentElement.parentElement.childNodes[1].childNodes[0].childNodes[1].childNodes[4].childNodes[0].childNodes[0];
+    if (select.val!='default' && day.value=="" ) {
+        day.classList.add('noValidate')
+    }
+    if (select.val!='default' && month.value=="" ) {
+        month.classList.add('noValidate')
+    }
+    if (select.val!='default' && year.value=="" ) {
+        year.classList.add('noValidate')
+    }
+    if (select.val!='default' && state.value=="" ) {
+        state.classList.add('noValidate')
+    }
+    if (select.val!='default' && inv.value=="" ) {
+        inv.classList.add('noValidate')
+    }
+    $('input').on('keyup keydown keypress change paste', function () {
+        if ($(this).val() > 0) {
+            $(this).removeClass('noValidate');
+            $(this).removeClass('rut-error');
+        } 
+        if ($('.bg-skyblue-acordeon').find(".rut-error").length == 0) {
+            console.log("gooood")
+        } 
+    });
+    $("select").on('change', function() {
+        if ($(this).val()!='default') {
+            $(this).removeClass('noValidate');
+            $(this).removeClass('rut-error');
+        } 
+        if ($('.bg-skyblue-acordeon').find(".rut-error").length == 0) {
+            console.log("gooood")
+            $(".fakeBtn").hide()
+            $(".e-btn-acordion").show()
+        } 
+    });
+    $(".mar-bottom-24").append("<button onclick='fakeClick()' class='botns fakeBtn ladda-button botns-provida-v btn-desktop'>CALCULAR</button>")
+    $(".e-btn-acordion").hide()
+}
+
+function fakeClick() {
+    $(".noValidate").addClass("rut-error")
+}

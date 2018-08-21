@@ -188,7 +188,7 @@
                                     ¿Cuál es tu rut?
                                 </div>
                                 <div class="container">
-                                    <input class="input_rut bor-ask-tab" name="answer_b" type="text" tabindex="2" autocomplete="off"></input>
+                                    <input class="input_rut bor-ask-tab" name="answer_b" type="text" tabindex="2" autocomplete="ÑÖcompletes"></input>
                                 </div>
                             </div>
                         </div>
@@ -198,9 +198,9 @@
                                     ¿En qué fecha naciste?
                                 </div>
                                 <div class="BirthDate input-group triple-input" id="BirthDate">
-                                    <input id="date2" name="DOB1" type="number" size="2" maxlength="2" autocomplete="off" placeholder="DD" data-required="true" aria-required="true" class="col-md-3 col-sm-3 col-xs-3 date1 bor-ask-tab birthDateMonth required" onkeypress="return validaNUM(event)" onChange="return maxValue1()" tabindex="3">
+                                    <input id="date2" name="DOB1" type="number" size="2" maxlength="2" autocomplete="off" placeholder="DD" data-required="true" aria-required="true" class="col-md-3 col-sm-3 col-xs-3 date1 bor-ask-tab birthDateMonth birthDate required" onkeypress="return validaNUM(event)" onChange="return maxValue1()" tabindex="3">
                                     <label class="col-md-1 col-sm-1 col-xs-1 sectionBar">-</label>
-                                    <input id="date3" name="DOB2" type="number" size="2" maxlength="2" autocomplete="off" placeholder="MM" data-required="true" aria-required="true" class="col-md-3 col-sm-3 col-xs-3 bor-ask-tab date2 birthDateDay required" tabindex="4" onChange="return maxValue2()" onkeypress="return validaNUM(event)">
+                                    <input id="date3" name="DOB2" type="number" size="2" maxlength="2" autocomplete="off" placeholder="MM" data-required="true" aria-required="true" class="col-md-3 col-sm-3 col-xs-3 bor-ask-tab date2 birthDateDay birthDate required" tabindex="4" onChange="return maxValue2()" onkeypress="return validaNUM(event)">
                                     <label class="col-md-1 col-sm-1 col-xs-1 sectionBar">-</label>
                                     <input id="date4" name="DOB3" type="number" size="4" maxlength="4" autocomplete="off" placeholder="AAAA" data-required="true" aria-required="true" class="col-md-4 col-sm-4 col-xs-4 bor-ask-tab date3 birthDateYear required indx_3" tabindex="5" onkeypress="return validaNUM(event)" onChange="return maxValue3()">
                                 </div>
@@ -321,12 +321,12 @@
                         </div>
                         <div class="tile-0 small-product-card abstract-tile single base parbase product-module__small product-module__small--product bg-white xk-component xk-section-base" data-xk-section="v1">
                             <div class="product-module__small--product__wrapper">
-                                <a href="#" class="product-module__small__imagewrapper indx_14" target="_self"> 
+                                <a href="#" class="product-module__small__imagewrapper indx_14 none-deco" target="_self"> 
                                     <img src="img/icon-t.svg" class="indx_11">
                                 </a>
                                 <br>
                                 <a href="#" class="cro-link-1 product-module__action product-module__action--small" target="_self">
-                                ¿Quiéres conocer tu Multifondo?</a>
+                                ¿Quieres conocer tu Multifondo?</a>
                             </div>
                         </div>
                     </div>
@@ -347,7 +347,7 @@
         <script src="js/range-age.js"></script>
         <script src="js/funciones-idx.js"></script>
            <!-- VALIDACION RUT -->
-           <script src="js/jquery.Rut.js" type="text/javascript"></script>
+           <!-- <script src="js/jquery.Rut.js" type="text/javascript"></script>
            <script>
                  $(document).ready(function(){
                    $('.input_rut').Rut({
@@ -360,6 +360,6 @@
                        }
                    });
                });
-           </script>
+           </script> -->
     </body>
 </html>

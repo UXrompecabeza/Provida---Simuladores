@@ -87,12 +87,6 @@ z-index: 99999999 !important;
     width: auto;
 }
 
-.box-medidor div {
-    line-height: 20px;
-    display: block;
-    font-size: 20px;
-    height: 20px;
-}
 
 .box-recomendacion .space {
     line-height: 30px;
@@ -1989,7 +1983,7 @@ box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.32); */
     border-right: 5px solid #333333;
 }
 
-.btn-tabla-detalle {
+.btn-tabla-detalle, .none-deco {
     text-decoration: none;
 }
 
@@ -2403,7 +2397,45 @@ Se agrega el block y float left
     border: 1px solid #0061a0;
 }
 .accordion__title span {
-    width: 91% !important;
+    width: auto !important;
+}
+
+.border-top:nth-child(1) .accordion__title:first-child {
+    width: auto !important;
+}
+.border-top:nth-child(2) .accordion__title:first-child {
+    width: auto !important;
+}
+.border-top:nth-child(3) .accordion__title:first-child {
+    width: auto !important;
+}
+
+
+.accordion__title {
+    position: relative;
+    width: auto !important;
+    display: inline-block !important;
+    padding: 0 !important;
+}
+
+.acordion-icon-area {
+    position: absolute;
+    right: 2em;
+}
+
+.acordeon-item-tab {
+    padding: 15px 40px 15px 20px;
+}
+
+.acordeon-item-tab button[data-tooltip] {
+    margin-left: .1em;
+    position: relative;
+    bottom: 5px;
+}
+
+.accordion__content {
+    padding: 0 !important;
+    margin-top: 1em;
 }
 
 
@@ -3161,10 +3193,6 @@ button.btn {
 
 .op {
     opacity: 1;
-}
-
-.center {
-    text-align: center;
 }
 
 .left {
@@ -4289,7 +4317,14 @@ label{
     }
 }
 
-@media (max-width: 1024px) {
+@media (min-width: 991px) and (max-width: 1023px)  {
+    #portamento_container #sidebar {
+        position: relative !important;
+        top: inherit !important;
+    } 
+}
+
+@media (max-width: 1023px) {
     .botonera {
       width: 80%!important;
     }
@@ -4307,14 +4342,13 @@ label{
         width: 100%!important;
     }
 
-    /* #portamento_container #sidebar {
-        position: initial!important;
-    } */
 
     .bg-skyblue,    
     .btns-result-general {
         margin-bottom: 1em!important;
     }
+
+   
   
 }
 
@@ -5120,13 +5154,13 @@ label{
 
 /* Add this attribute to the element that needs a tooltip */
 [data-tooltip] {
-    position: relative;
+    position: absolute;
     z-index: 2;
     cursor: pointer;
     background: none;
     border:none;
     width: 18px;
-    bottom: 2px;
+    margin-left: 6px;
 }
   
   /* Hide the tooltip content by default */
@@ -5214,3 +5248,99 @@ label{
     filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
   }
+
+  /* Mediaqueries tooltip mobil & tablet */
+@media (max-width: 357px) {
+    .border-top:nth-child(5) .accordion__title:first-child {
+        width: 85% !important;
+    }
+    .border-top:nth-child(5) button {
+        left: -50px;
+    }
+}
+@media (min-width: 358px) and (max-width: 457px) {
+    .border-top:nth-child(5) .accordion__title:first-child {
+        width: 85% !important;
+    }
+    .border-top:nth-child(5) button {
+        left: -118px;
+    }
+}
+@media (min-width: 481px) and (max-width: 486px) {
+    .border-top:nth-child(5) .accordion__title:first-child {
+        width: 85% !important;
+    }
+    .border-top:nth-child(5) button {
+        left: -60px;
+    }
+}
+@media (min-width: 487px) and (max-width: 611px) {
+    .border-top:nth-child(5) .accordion__title:first-child {
+        width: 85% !important;
+    }
+    .border-top:nth-child(5) button {
+        left: -115px;
+    }
+}
+
+@media (max-width: 359px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 87% !important;
+    }
+}
+@media (min-width: 360px) and (max-width: 438px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 87% !important;
+    }
+    .border-top:nth-child(4) button {
+        left: -50px;
+    }
+}
+@media (min-width: 439px) and (max-width: 457px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 87% !important;
+    }
+    .border-top:nth-child(4) button {
+        left: -160px;
+    }
+}
+@media (min-width: 458px) and (max-width: 464px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 87% !important;
+    }
+    .border-top:nth-child(4) button {
+        left: -210px;
+    }
+}
+@media (min-width: 465px) and (max-width: 480px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 87% !important;
+    }
+    .border-top:nth-child(4) button {
+        left: -235px;
+    }
+}
+@media (min-width: 481px) and (max-width: 547px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 87% !important;
+    }
+    .border-top:nth-child(4) button {
+        left: -15px;
+    }
+}
+@media (min-width: 548px) and (max-width: 595px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 87% !important;
+    }
+    .border-top:nth-child(4) button {
+        left: -130px;
+    }
+}
+@media (min-width: 596px) and (max-width: 683px) {
+    .border-top:nth-child(4) .accordion__title:first-child {
+        width: 91% !important;
+    }
+    .border-top:nth-child(4) button {
+        left: -215px;
+    }
+}

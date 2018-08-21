@@ -32,7 +32,7 @@ $('[data-valid-type=renta]').on('keyup', function (evt) {
                     }
                     var len = str.length;
                     if (len > 11) {
-                        str = str.substr(0, 11;
+                        str = str.substr(0, 11)
                         $(this).val(str);
                         return false;
                     }
