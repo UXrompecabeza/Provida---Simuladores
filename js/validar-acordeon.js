@@ -181,27 +181,43 @@ function validateChildren(event) {
     if (select.val!='default' && inv.value=="" ) {
         inv.classList.add('noValidate')
     }
-    $('input').on('keyup keydown keypress change paste', function () {
+    $('input').on('keyup change paste', function () {
         if ($(this).val() > 0) {
             $(this).removeClass('noValidate');
             $(this).removeClass('rut-error');
         } 
-        if ($('.bg-skyblue-acordeon').find(".rut-error").length == 0) {
-            console.log("gooood")
+        if ($(this).val() == "") {
+            $(this).addClass('noValidate');
         } 
-    });
-    $("select").on('change', function() {
-        if ($(this).val()!='default') {
-            $(this).removeClass('noValidate');
-            $(this).removeClass('rut-error');
-        } 
-        if ($('.bg-skyblue-acordeon').find(".rut-error").length == 0) {
-            console.log("gooood")
+        if ($('.bg-skyblue-acordeon').find(".noValidate").length == 0) {
             $(".fakeBtn").hide()
             $(".e-btn-acordion").show()
         } 
+        if ($('.bg-skyblue-acordeon').find(".noValidate").length > 0) {
+            $(".fakeBtn").show()
+            $(".e-btn-acordion").hide()
+        }
     });
-    $(".mar-bottom-24").append("<button onclick='fakeClick()' class='botns fakeBtn ladda-button botns-provida-v btn-desktop'>CALCULAR</button>")
+    $("select").on('change', function() {
+        if ($(this).val()!='') {
+            $(this).removeClass('noValidate');
+            $(this).removeClass('rut-error');
+        } 
+        if ($(this).val()=='') {
+            $(this).addClass('noValidate');
+        } 
+        if ($('.bg-skyblue-acordeon').find(".noValidate").length == 0) {
+            $(".fakeBtn").hide()
+            $(".e-btn-acordion").show()
+        } 
+        if ($('.bg-skyblue-acordeon').find(".noValidate").length > 0) {
+            $(".fakeBtn").show()
+            $(".e-btn-acordion").hide()
+        } 
+    });
+    if ($(".mar-bottom-24").find(".fakeBtn").length == 0) {
+        $(".mar-bottom-24").append("<button onclick='fakeClick()' class='botns fakeBtn ladda-button botns-provida-v btn-desktop'>CALCULAR</button>")
+    }
     $(".e-btn-acordion").hide()
 }
 
