@@ -276,7 +276,7 @@ $(function maxValue2() {
 
 $(function maxValue3() {
     $(document).on('keyup', '.date3', function (event) {
-        let max = 2000;
+        let max = 2018;
         let valor = parseInt(this.value);
         if (valor > max) {
             this.value = max;

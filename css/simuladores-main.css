@@ -1987,6 +1987,10 @@ box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.32); */
     text-decoration: none;
 }
 
+.none-deco:hover {
+    text-decoration: none;
+}
+
 .btn-tabla-detalle:hover {
     text-decoration: none;
 }
