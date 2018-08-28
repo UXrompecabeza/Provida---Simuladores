@@ -553,6 +553,7 @@ select::-ms-expand {
     font-size: 11px;
     line-height: 16px;
     padding-top: 20px;
+    display: inline-block;
 }
 
 .product-module__small__imagewrapper img {
