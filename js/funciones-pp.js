@@ -16,6 +16,35 @@ if (mediaquery.matches) {
     $('#sidebar').portamento({ wrapper: $('#wrapper') }); 
 }
 
+$(function(){
+	$('.sim-input-simbol').keyup(function()
+	{
+		var yourInput = $(this).val();
+		re = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
+		var isSplChar = re.test(yourInput);
+		if(isSplChar)
+		{
+			var no_spl_char = yourInput.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+			$(this).val(no_spl_char);
+        }
+    });
+    $('.input-emoji').bind('keyup blur',function(){ 
+        var node = $(this);
+        node.val(node.val().replace(/[^a-z]/g,'') ); }
+    );
+
+    function test_fn(test_value){
+        var test_value = test_value.replace(/[^0-9]/g, "");
+        document.getElementById("iid").value = test_value;
+    }
+
+    $('.sim-input-dots').keyup(function()
+	{
+		var test_value = $(this).val();
+		var test_value = test_value.replace(/[^0-9]/g, "");
+    });
+});
+
 function birthDayMonth(event) {
     let input = event.target
     let min = 1;

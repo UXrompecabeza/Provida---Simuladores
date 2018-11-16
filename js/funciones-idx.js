@@ -31,6 +31,37 @@ $('.input_rut').on('input', function () {
     this.value = value;
 });
 
+$(function(){
+	$('.sim-input-simbol').keyup(function()
+	{
+		var yourInput = $(this).val();
+		re = /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi;
+		var isSplChar = re.test(yourInput);
+		if(isSplChar)
+		{
+			var no_spl_char = yourInput.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+			$(this).val(no_spl_char);
+        }
+    });
+    $('.input-emoji').bind('keyup blur',function(){ 
+        var node = $(this);
+        node.val(node.val().replace(/[^a-z]/g,'') ); }
+    );
+
+    
+});
+
+$('.sim-input-dots').keyup(function() {
+    var test_value = $(this).val();
+    var test_value = test_value.replace(/[^0-9]/g, "");
+});
+
+$(".sim-input-dots").change(function() {
+    var a = $(this).val(); 
+    var b = parseInt(a, 10);
+    $(this).val(b);
+});
+
 function validateForm() {
     var a = document.forms["form-pension"]["answer_a"].value;
     var b = document.forms["form-pension"]["answer_b"].value;
