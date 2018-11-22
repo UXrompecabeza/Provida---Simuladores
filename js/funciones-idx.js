@@ -62,6 +62,13 @@ $(".sim-input-dots").change(function() {
     $(this).val(b);
 });
 
+$(".sim-input-dots").change(function() {
+    var a = $(this).val(); 
+    if(a == NaN) {
+        $(this).val(1);
+    }
+});
+
 function validateForm() {
     var a = document.forms["form-pension"]["answer_a"].value;
     var b = document.forms["form-pension"]["answer_b"].value;

@@ -28,6 +28,7 @@ $(function(){
 			$(this).val(no_spl_char);
         }
     });
+
     $('.input-emoji').bind('keyup blur',function(){ 
         var node = $(this);
         node.val(node.val().replace(/[^a-z]/g,'') ); }
@@ -43,6 +44,20 @@ $(function(){
 		var test_value = $(this).val();
 		var test_value = test_value.replace(/[^0-9]/g, "");
     });
+
+    $(".sim-input-dots").change(function() {
+        var a = $(this).val(); 
+        var b = parseInt(a, 10);
+        $(this).val(b);
+    });
+
+    $(".sim-input-dots").change(function() {
+        var a = $(this).val(); 
+        if(a == "NaN") {
+            $(this).val(1);
+        }
+    });
+
 });
 
 function birthDayMonth(event) {
