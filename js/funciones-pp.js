@@ -58,6 +58,25 @@ $(function(){
         }
     });
 
+    $('.sim-input-results').change(function()
+	{
+        var a = $(this).val(); 
+        var isDot = a.indexOf(',');
+        if(isDot > -1)
+        {
+            var b = parseInt(a, 10);
+            $(this).val(b);
+        }
+    });
+    $(".sim-input-results").change(function() {
+        var a = $(this).val(); 
+        if(a == "NaN") {
+            $(this).val(1);
+        }
+    });
+
+
+
 });
 
 function birthDayMonth(event) {

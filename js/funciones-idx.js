@@ -69,6 +69,16 @@ $(".sim-input-dots").change(function() {
     }
 });
 
+$(".last-dot").change(function() {
+    var valueDate = $(this).val();
+    var lastvalue = valueDate.charAt(valueDate.length-1);
+    if (lastvalue == ".") {
+        let newValue = valueDate.substr(0, valueDate.length - 1)
+        $(this).val(newValue);
+    }
+});
+
+
 function validateForm() {
     var a = document.forms["form-pension"]["answer_a"].value;
     var b = document.forms["form-pension"]["answer_b"].value;

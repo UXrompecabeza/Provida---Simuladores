@@ -230,7 +230,7 @@
                                                             </div>
                                                             <div class="container">
                                                                     <span class="peso">$</span>
-                                                                    <input id="with-prefix" name="e-input-cantPension" class="bor-bott money e-input-cantPension sim-input-dots" type="tel" step="1" placeholder="0" />
+                                                                    <input id="with-prefix" name="e-input-cantPension" class="bor-bott money e-input-cantPension sim-input-results" type="tel" step="1" placeholder="0" />
                                                                     <p>mensual</p>
                                                             </div>
                                                         </div>
@@ -284,7 +284,7 @@
                                                                     </div>
                                                                     <div class="container">
                                                                         <span class="peso">$</span>
-                                                                        <input id="input-cifra" type="tel" class="with-prefix cifra bor-bott money e-monto1 sim-input-dots" name="e-monto1" onchange="sumar();" placeholder="0" />
+                                                                        <input id="input-cifra" type="tel" class="with-prefix cifra bor-bott money e-monto1 sim-input-results" name="e-monto1" onchange="sumar();" placeholder="0" />
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-4 fondos">
@@ -348,7 +348,7 @@
                                                                     <p>Monto</p>
                                                                     <div class="clearfix"></div>
                                                                     <span class="peso">$</span>
-                                                                    <input id="tipoCuenta"class="bor-bott money e-monto2 sim-input-dots" name="e-monto2" type="tel" maxlength="11" placeholder="0" />
+                                                                    <input id="tipoCuenta"class="bor-bott money e-monto2 sim-input-results" name="e-monto2" type="tel" maxlength="11" placeholder="0" />
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <p>¿En qué Fondo/s?</p>
@@ -437,14 +437,14 @@
                                                                     <div class="container mar-top-8">
                                                                         <input class="hidden" name="BirthDate" id="BirthDateInput">
                                                                         <div class="BirthDate input-group triple-input fixipad" id="BirthDate">
-                                                                            <input class="col-md-3 bor-ask-tab birthDateDay bday required" name ="birthDateDay" data-required="true" aria-required="true" id="BirthDated" type="number" onfocusout="return birthDayMonth(event)"
+                                                                            <input class="col-md-3 bor-ask-tab birthDateDay bday required sim-input-dots" name ="birthDateDay" data-required="true" aria-required="true" id="BirthDated" type="tel" onfocusout="return birthDayMonth(event)"
                                                                             onChange="return maxValue3()" placeholder="DD" size="2" onkeypress="return validaNUM(event)">
                                                                             <label class="col-md-1 sectionBar">-</label>
-                                                                            <input class="col-md-3 bor-ask-tab birthDateMonth bmes required" name="birthDateMonth" data-required="true" aria-required="true" onfocusout="return birthDayMonth(event)"
-                                                                            onChange="return maxValue3()" id="BirthDatem" type="number" placeholder="MM" size="2" onkeypress="return validaNUM(event)">
+                                                                            <input class="col-md-3 bor-ask-tab birthDateMonth bmes required sim-input-dots" name="birthDateMonth" data-required="true" aria-required="true" onfocusout="return birthDayMonth(event)"
+                                                                            onChange="return maxValue3()" id="BirthDatem" type="tel" placeholder="MM" size="2" onkeypress="return validaNUM(event)">
                                                                             <label class="col-md-1 sectionBar">-</label>
-                                                                            <input class="col-md-4 bor-ask-tab birthDateYear bano required" name="birthDateYear"
-                                                                            onChange="return maxValue2()" data-required="true" aria-required="true" maxlength="4" id="BirthDatey" type="number" placeholder="AAAA" onkeypress="return validaNUM(event)" onfocusout="return birthDayYear(event)">
+                                                                            <input class="col-md-4 bor-ask-tab birthDateYear bano required sim-input-dots" name="birthDateYear"
+                                                                            onChange="return maxValue2()" data-required="true" aria-required="true" maxlength="4" id="BirthDatey" type="tel" placeholder="AAAA" onkeypress="return validaNUM(event)" onfocusout="return birthDayYear(event)">
                                                                         </div>
                                                                     </div>
                                                                 </div>
