@@ -43,10 +43,12 @@ $(function(){
 			$(this).val(no_spl_char);
         }
     });
+
     $('.input-emoji').bind('keyup blur',function(){ 
         var node = $(this);
-        node.val(node.val().replace(/[^a-z]/g,'') ); }
-    );
+        
+        node.val(node.val().replace(/[^a-zÑñáéíóúÁÉÍÓÚ]/gi, '') ); 
+    });
 
     
 });
@@ -64,12 +66,12 @@ $(".sim-input-dots").change(function() {
 
 $(".sim-input-dots").change(function() {
     var a = $(this).val(); 
-    if(a == NaN) {
+    if(isNaN(a)) {
         $(this).val(1);
     }
 });
 
-$(".last-dot").change(function() {
+$(".sim-input-dots").change(function() {
     var valueDate = $(this).val();
     var lastvalue = valueDate.charAt(valueDate.length-1);
     if (lastvalue == ".") {
@@ -203,7 +205,6 @@ function soloLetras(e) {
     tecla = String.fromCharCode(key).toLowerCase();
     letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
     especiales = "8-37-39-46";
-
     tecla_especial = false
     for (var i in especiales) {
         if (key == especiales[i]) {

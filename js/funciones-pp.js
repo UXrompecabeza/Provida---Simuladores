@@ -75,6 +75,16 @@ $(function(){
         }
     });
 
+    $(".sim-input-dots").change(function() {
+        var valueDate = $(this).val();
+        var lastvalue = valueDate.charAt(valueDate.length-1);
+        if (lastvalue == ".") {
+            $(this).val(
+                function(index, valueDate){
+                    return valueDate.substr(0, valueDate.length - 1);
+            })
+        }
+    });
 
 
 });
@@ -152,16 +162,22 @@ $('input.birthDateYear').attr('maxLength', '4').keypress(limitMe);
 function validaNUM(e) {
     tecla = (document.all) ? e.keyCode : e.which;
 
-    //Tecla de retroceso para borrar, siempre la permite
+    
     if (tecla == 8) {
         return true;
     }
 
-    // Patron de entrada, en este caso solo acepta numeros
+    
     patron = /[0-9]/;
     tecla_final = String.fromCharCode(tecla);
     return patron.test(tecla_final);
-}
+};
+
+function validaDot(e) {
+    
+    e.val(e.val().replace(/[^0-9]/gi, '') ); 
+};
+
 
 $(".tiemposelect").hide();
 
@@ -307,25 +323,13 @@ function format_input(e) {
     });
 }
 
-/* Function */
-function format_number(number, prefix, thousand_separator, decimal_separator)
-{
-    var thousand_separator = thousand_separator || '.',
-        decimal_separator = decimal_separator || ',',
-        regex		= new RegExp('[^' + decimal_separator + '\\d]', 'g'),
-        number_string = number.replace(regex, '').toString(),
-        split	  = number_string.split(decimal_separator),
-        rest 	  = split[0].length % 3,
-        result 	  = split[0].substr(0, rest),
-        thousands = split[0].substr(rest).match(/\d{3}/g);
-    
-    if (thousands) {
-        separator = rest ? thousand_separator : '';
-        result += separator + thousands.join(thousand_separator);
-    }
-    result = split[1] != undefined ? result + decimal_separator + split[1] : result;
-    return prefix == undefined ? result : (result ? prefix + result : '');
-};
+function format_number(n) {
+    n = String(n).replace(/\D/g, "");
+    return n === '' ? n : Number(n).toLocaleString("es-CL");
+}
+
+
+
 
 
 
